@@ -1,0 +1,212 @@
+
+/* ribbon for article titles */
+
+ .ribbon-wrapper {
+	position: relative;
+	left: -12px;
+	width: 250px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	/*
+	border-bottom: px solid #ccc;
+	border-top: 10px solid #ccc;
+	-moz-border-bottom-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+	-webkit-border-bottom-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+	-moz-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+	-webkit-border-top-colors: rgba(0, 0, 0, 0.02) rgba(0, 0, 0, 0.04) rgba(0, 0, 0, 0.06) rgba(0, 0, 0, 0.08) rgba(0, 0, 0, 0.10) rgba(0, 0, 0, 0.12) rgba(0, 0, 0, 0.14) rgba(0, 0, 0, 0.16) rgba(0, 0, 0, 0.18) rgba(0, 0, 0, 0.20);
+	*/
+}
+  .ribbon-front {
+	background-color: #847520;	height: 40px;
+	width: 260px;
+	position: relative;
+	left:-10px;
+	z-index: 2;
+}
+
+  .ribbon-front,  
+  .ribbon-back-right
+{
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	
+	/*	
+		The horizontal offset of the shadow, positive means the shadow will be on the right of the box, a negative offset will put the shadow on the left of the box.
+		The vertical offset of the shadow, a negative one means the box-shadow will be above the box, a positive one means the shadow will be below the box.
+		The blur radius (optional), if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be.
+		The spread radius (optional), positive values increase the size of the shadow, negative values decrease the size. Default is 0 (the shadow is same size as blur).
+		Color	
+	*/
+	
+	 box-shadow: 0 -3px 3px 0px rgba(0,0,0,0.55);
+}
+
+	.ribbon-back-left
+	{
+		-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+		-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+		-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+		-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);		
+		 box-shadow: -1px 1px 2px 0px rgba(0,0,0,0.55);
+	}
+
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-topright {
+}
+
+  .ribbon-edge-bottomleft,
+  .ribbon-edge-bottomright {
+	top: 40px;
+}
+
+  .ribbon-edge-topleft,
+  .ribbon-edge-bottomleft {
+	left: -10px;
+	border-color: transparent #5a5016 transparent transparent;
+}
+
+  .ribbon-edge-topleft {
+	top: -10px;
+	border-width: 10px 10px 0 0;
+}
+  .ribbon-edge-bottomleft {
+	border-width: 0 10px 0px 0;
+}
+
+  .ribbon-edge-topright,
+  .ribbon-edge-bottomright {
+	left: 250px;
+	border-color: transparent transparent transparent #9999CC;
+}
+
+  .ribbon-edge-topright {
+	top: 0px;
+	border-width: 0px 0 0 0px;
+}
+  .ribbon-edge-bottomright {
+	border-width: 0 0 0px 0px;
+}
+
+  .ribbon-back-left {
+	position: absolute;
+	top: -10px;
+	left: -25px;
+	width: 25px;
+	height: 40px;
+	background-color: #847520;	z-index: 0;
+}
+
+  .ribbon-back-right {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 0px;
+	height: 40px;
+		z-index: 0;
+}
+
+/* ribbon rendered aside */
+
+ .small-ribbon-wrapper {
+	position: relative;	
+	float: right;
+}
+  .small-ribbon-front {
+	background-color: #847520;	height: 25px;
+	width: 140px;
+	position: relative;
+	right:-22px;
+	z-index: 2;
+}
+
+  .small-ribbon-front,
+  .small-ribbon-back-left,
+  .small-ribbon-back-right
+{
+	-moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-webkit-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	-o-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.55);
+}
+
+  .small-ribbon-edge-topleft,
+  .small-ribbon-edge-topright,
+  .small-ribbon-edge-bottomleft,
+  .small-ribbon-edge-bottomright {
+	position: absolute;
+	z-index: 1;
+	border-style:solid;
+	height:0px;
+	width:0px;
+}
+
+  .small-ribbon-edge-topleft,
+  .small-ribbon-edge-topright {
+}
+
+  .small-ribbon-edge-bottomleft,
+  .small-ribbon-edge-bottomright {
+	top: 20px;
+}
+
+  .small-ribbon-edge-topleft,
+  .small-ribbon-edge-bottomleft {
+	left: -10px;
+	border-color: transparent #5a5016 transparent transparent;
+}
+
+  .small-ribbon-edge-topleft {
+	top: -5px;
+	border-width: 5px 10px 0 0;
+}
+  .small-ribbon-edge-bottomleft {
+	border-width: 0 10px 0px 0;
+}
+
+  .small-ribbon-edge-topright,
+  .small-ribbon-edge-bottomright {
+	left: 152px;
+	border-color: transparent transparent transparent #5a5016;
+}
+
+  .small-ribbon-edge-topright {
+	top: -5px;
+	right: -12px;
+	border-width: 5px 0 0 10px;
+}
+  .small-ribbon-edge-bottomright {
+	border-width: 0 0 0px 10px;
+}
+
+  .small-ribbon-back-left {
+	position: absolute;
+	top: -5px;
+	left: 0px;
+	width: 0px;
+	height: 20px;
+		z-index: 0;
+}
+
+  .small-ribbon-back-right {
+	position: absolute;
+	top: -5px;
+	right: 0px;
+	width: 0px;
+	height: 20px;
+		z-index: 0;
+}
