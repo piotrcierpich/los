@@ -81,7 +81,7 @@
                                         <article class="content-item blog-post">
                                             <header>
                                                 <h1>
-                                                    @Html.ActionLink(articleAbstract.Title, "Details", new{id = articleAbstract.Id}, null)
+                                                    @Html.ActionLink(articleAbstract.Title, "Details", new { id = articleAbstract.Id }, null)
                                                 </h1>
                                                 <div class="metadata">
                                                     <div class="published">
@@ -92,16 +92,26 @@
                                             </header>
                                             <p>
                                                 @articleAbstract.Abstract
-                                            <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">więcej</a>
+                                                @Html.ActionLink("więcej", "Details", new { id = articleAbstract.Id }, null)
                                             </p>
                                         </article>
                                     </li>
                                 }
-                            <ul class="pager group">
-                                <li class="last first">
-                                    <a href="/aktualnosci?page=2">Older</a>
-                                </li>
-                            </ul>
+                                </ul>
+                                <ul class="pager group">
+                                    @if (ViewBag.PreviousPageExists)
+                                    {
+                                        <li>
+                                            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = ViewBag.PreviousPageIndex }, null)
+                                        </li>
+                                    }
+                                    @if (ViewBag.NextPageExists)
+                                    {
+                                        <li>
+                                            @Html.ActionLink("Następne", "Index", new {pageIndex = ViewBag.NextPageIndex}, null)
+                                        </li>
+                                    }
+                                </ul>
                         </article>
                     </div>
                 </div>
