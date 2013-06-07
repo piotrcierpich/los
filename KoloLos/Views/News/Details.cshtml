@@ -1,4 +1,4 @@
-﻿@model dynamic
+﻿@model KoloLos.Models.NewsDetail
 
 @{
     ViewBag.Title = "Aktualności";
@@ -60,7 +60,7 @@
                         <div class="ribbon-wrapper">
                           <div class="ribbon-front">
                             <!-- ribbon text goes here -->
-                            <div id="articleTitle">Prace na rzecz Koła</div>
+                            <div id="articleTitle">@Model.Title</div>
                           </div>
                           <div class="ribbon-edge-topleft"></div>
                           <div class="ribbon-edge-topright"></div>
@@ -72,7 +72,7 @@
                           <div class="ribbon-back-right"></div>
                         </div>
                       </header>
-                      <p>W dniu 8 czerwca 2013 w obwodzie nr 109 i 63 organizowane są prace na rzecz Koła. Zbiórki kolegów chętnych do pracy są o godzinie 8:00, w obwodzie 63 u kolegi Jana Golca, a w obwodzie 109 u Pana Józefa Szczepanika. W obwodzie 109 organizowana jest również praca na rzecz Koła w dniu 22 czerwca 2013. W sprawie szczegółowych informacji w obwodzie 63, kontaktować się z Łowczym Koła, a w obwodzie 109 z kol. Pawłem Pawlusem, który odpowiada za zakres prac.</p>
+                      <p>@Model.Content</p>
                     </article>
                   </div>
                 </div>

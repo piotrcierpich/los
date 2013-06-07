@@ -4,10 +4,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KoloLos.Models;
+
+using KoloLosLogic;
+
+using Omu.ValueInjecter;
+
 namespace KoloLos.Controllers
 {
     public class NewsController : Controller
     {
+        private readonly ArticlesRepository articlesRepository;
+
+        public NewsController(ArticlesRepository articlesRepository)
+        {
+            this.articlesRepository = articlesRepository;
+        }
+
         //
         // GET: /News/
 
@@ -16,12 +29,13 @@ namespace KoloLos.Controllers
             return View();
         }
 
-        //
-        // GET: /News/Details/5
-
         public ActionResult Details(int id)
         {
-            return View();
+            Article article = articlesRepository.GetById(id);
+            NewsDetail newsDetail = new NewsDetail();
+            newsDetail.InjectFrom(article);
+
+            return View(newsDetail);
         }
 
         //
