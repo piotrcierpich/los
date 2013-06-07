@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 
 using KoloLos.Models;
@@ -14,6 +11,7 @@ namespace KoloLos.Controllers
 {
     public class NewsController : Controller
     {
+        private const int AbstractsPerPageMaxCount = 10;
         private readonly ArticlesRepository articlesRepository;
 
         public NewsController(ArticlesRepository articlesRepository)
@@ -21,12 +19,18 @@ namespace KoloLos.Controllers
             this.articlesRepository = articlesRepository;
         }
 
-        //
-        // GET: /News/
-
         public ActionResult Index()
         {
-            return View();
+            // TODO this retrieves also main page description
+            Article[] articles = articlesRepository.GetLatest(AbstractsPerPageMaxCount);
+            Abstract[] abstracts = articles.Select(article =>
+                                                       {
+                                                           Abstract articleAbstract = new Abstract();
+                                                           articleAbstract.InjectFrom(article);
+                                                           return articleAbstract;
+                                                       })
+                                            .ToArray();
+            return View(abstracts);
         }
 
         public ActionResult Details(int id)

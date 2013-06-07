@@ -7,6 +7,9 @@ namespace KoloLosDataLayer
 {
     class LosDataInitializer : CreateDatabaseIfNotExists<LosDataContext>
     {
+        private const string LoremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+        private const string AbstractLoremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut...";
+
         protected override void Seed(LosDataContext context)
         {
             Category mainPageCategory = new Category
@@ -18,12 +21,12 @@ namespace KoloLosDataLayer
 
             Article mainPageStory = new Article
                                    {
-                                           Content = "Lorem ipsum dolor sit amet",
-                                           Abstract = "Lorem ipsum dolor sit amet",
-                                           Title = "Main page title",
-                                           Author = "Me",
-                                           Category = mainPageCategory,
-                                           PublishDate = DateTime.Now
+                                       Content = LoremIpsum,
+                                       Abstract = AbstractLoremIpsum,
+                                       Title = "Main page title",
+                                       Author = "Me",
+                                       Category = mainPageCategory,
+                                       PublishDate = DateTime.Now
                                    };
 
             context.Articles.Add(mainPageStory);
@@ -36,38 +39,20 @@ namespace KoloLosDataLayer
 
             context.Categories.Add(newsCategory);
 
-            Article news1 = new Article
+            for (int i = 0; i < 30; i++)
             {
-                Content = "Lorem ipsum dolor sit amet",
-                Abstract = "Lorem ipsum dolor sit amet",
-                Title = "Title 2",
-                Author = "Me",
-                Category = newsCategory
-            };
 
-            context.Articles.Add(news1);
+                Article news1 = new Article
+                {
+                    Content = LoremIpsum,
+                    Abstract = AbstractLoremIpsum,
+                    Title = "Title " + i,
+                    Author = "Me",
+                    Category = newsCategory
+                };
 
-            Article news2 = new Article
-            {
-                Content = "Lorem ipsum dolor sit amet",
-                Abstract = "Lorem ipsum dolor sit amet",
-                Title = "Title 3",
-                Author = "Me",
-                Category = newsCategory
-            };
-
-            context.Articles.Add(news2);
-
-            Article news3 = new Article
-            {
-                Content = "Lorem ipsum dolor sit amet",
-                Abstract = "Lorem ipsum dolor sit amet",
-                Title = "Title 4",
-                Author = "Someone else",
-                Category = newsCategory
-            };
-
-            context.Articles.Add(news3);
+                context.Articles.Add(news1);
+            }
 
             context.SaveChanges();
         }

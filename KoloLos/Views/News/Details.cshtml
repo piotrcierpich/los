@@ -4,102 +4,98 @@
     ViewBag.Title = "Aktualności";
 }
 
-<div  id="layout-wrapper">
-          <div id="layout-main-container">
-            <div id="layout-main" class="group">
-              <div id="layout-content" class="group shadow-box">
+<div id="layout-wrapper">
+    <div id="layout-main-container">
+        <div id="layout-main" class="group">
+            <div id="layout-content" class="group shadow-box">
                 <header id="layout-header" class="group">
-                  <div id="header">
-                    <div id="logo">
-                      <div class="zone zone-header">
-                        <div id="branding">
-                          <a href="../">
-                            <img src="/Content/pics/logow.png"
-                            border="0" />
-                          </a>
-                        </div>
-                      </div>
-                      <div id="layout-navigation" class="group">
-                        <div class="zone zone-navigation">
-                          <nav>
-                            <ul class="menu menu-main">
-                              <li>
-                                <a href="/">Strona
+                    <div id="header">
+                        <div id="logo">
+                            <div class="zone zone-header">
+                                <div id="branding">
+                                    <a href="../">
+                                        <img src="/Content/pics/logow.png" border="0" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="layout-navigation" class="group">
+                                <div class="zone zone-navigation">
+                                    <nav>
+                                        <ul class="menu menu-main">
+                                            <li>
+                                                <a href="/">Strona
                                 g&#197;&#8218;&#243;wna</a>
-                              </li>
-                              <li class="current">
-                                <a href="/aktualnosci">
-                                Aktualno&#197;&#8250;ci</a>
-                              </li>
-                              <li>
-                                <a href="/uchwaly">
-                                Uchwa&#197;&#8218;y</a>
-                              </li>
-                              <li>
-                                <a href="/historia">Historia
+                                            </li>
+                                            <li class="current">
+                                                <a href="/aktualnosci">Aktualno&#197;&#8250;ci</a>
+                                            </li>
+                                            <li>
+                                                <a href="/uchwaly">Uchwa&#197;&#8218;y</a>
+                                            </li>
+                                            <li>
+                                                <a href="/historia">Historia
                                 ko&#197;&#8218;a</a>
-                              </li>
-                              <li>
-                                <a href="/Containers/Item/Display/20">
-                                Galeria</a>
-                              </li>
-                              <li>
-                                <a href="/kontakt">Kontakt</a>
-                              </li>
-                            </ul>
-                          </nav>
+                                            </li>
+                                            <li>
+                                                <a href="/Containers/Item/Display/20">Galeria</a>
+                                            </li>
+                                            <li>
+                                                <a href="/kontakt">Kontakt</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
-                  </div>
                 </header>
                 <div id="content" class="group">
-                  <div class="zone zone-content">
-                    <article class="content-item blog-post">
-                      <header>
-                        <div class="ribbon-wrapper">
-                          <div class="ribbon-front">
-                            <!-- ribbon text goes here -->
-                            <div id="articleTitle">@Model.Title</div>
-                          </div>
-                          <div class="ribbon-edge-topleft"></div>
-                          <div class="ribbon-edge-topright"></div>
-                          <div class="ribbon-edge-bottomleft">
-                          </div>
-                          <div class="ribbon-edge-bottomright">
-                          </div>
-                          <div class="ribbon-back-left"></div>
-                          <div class="ribbon-back-right"></div>
-                        </div>
-                      </header>
-                      <p>@Model.Content</p>
-                    </article>
-                  </div>
+                    <div class="zone zone-content">
+                        <article class="content-item blog-post">
+                            <header>
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-front">
+                                        <!-- ribbon text goes here -->
+                                        <div id="articleTitle">@Model.Title</div>
+                                    </div>
+                                    <div class="ribbon-edge-topleft"></div>
+                                    <div class="ribbon-edge-topright"></div>
+                                    <div class="ribbon-edge-bottomleft">
+                                    </div>
+                                    <div class="ribbon-edge-bottomright">
+                                    </div>
+                                    <div class="ribbon-back-left"></div>
+                                    <div class="ribbon-back-right"></div>
+                                </div>
+                            </header>
+                            <p>@Model.Content</p>
+                        </article>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          <div id="layout-footer" class="group">
-            <footer id="footer">
-              <div id="footer-sig" class="group">
+        </div>
+    </div>
+    <div id="layout-footer" class="group">
+        <footer id="footer">
+            <div id="footer-sig" class="group">
                 <div class="zone zone-footer">
-                  <div class="credits">
-                    <span class="poweredby">Powered by 
+                    <div class="credits">
+                        <span class="poweredby">Powered by 
                     <a href="http://www.orchardproject.net"
-                    target="_blank">Orchard</a></span>
-                    <span class="copyright">&#169; Ko&#197;&#8218;o
+                        target="_blank">Orchard</a></span>
+                        <span class="copyright">&#169; Ko&#197;&#8218;o
                     &#197;&#8218;owieckie
                     &#197;O&#197;&#353;.</span>
-                  </div>
-                  <div class="user-display">
-                    <span class="user-actions">
-                      <a href="/Users/Account/LogOn?ReturnUrl=%2Faktualnosci%2Fprace-na-rzecz-ko%C5%82a"
-                      rel="nofollow">Zaloguj si&#196;&#8482;</a>
-                    </span>
-                  </div>
+                    </div>
+                    <div class="user-display">
+                        <span class="user-actions">
+                            <a href="/Users/Account/LogOn?ReturnUrl=%2Faktualnosci%2Fprace-na-rzecz-ko%C5%82a"
+                                rel="nofollow">Zaloguj si&#196;&#8482;</a>
+                        </span>
+                    </div>
                 </div>
-              </div>
-            </footer>
-          </div>
-        </div>
-      
+            </div>
+        </footer>
+    </div>
+</div>
+

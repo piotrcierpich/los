@@ -1,0 +1,377 @@
+﻿@model KoloLos.Models.Abstract[]
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div id="layout-wrapper">
+    <div id="layout-main-container">
+        <div id="layout-main" class="group">
+            <div id="layout-content" class="group shadow-box">
+                <header id="layout-header" class="group">
+                    <div id="header">
+                        <div id="logo">
+                            <div class="zone zone-header">
+                                <div id="branding">
+                                    <a href="./">
+                                        <img src="/Content/pics/logow.png" border="0" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="layout-navigation" class="group">
+                                <div class="zone zone-navigation">
+                                    <nav>
+                                        <ul class="menu menu-main">
+                                            <li>
+                                                <a href="/">Strona
+                                g&#197;&#8218;&#243;wna</a>
+                                            </li>
+                                            <li class="current">
+                                                <a href="/aktualnosci">Aktualno&#197;&#8250;ci</a>
+                                            </li>
+                                            <li>
+                                                <a href="/uchwaly">Uchwa&#197;&#8218;y</a>
+                                            </li>
+                                            <li>
+                                                <a href="/historia">Historia
+                                ko&#197;&#8218;a</a>
+                                            </li>
+                                            <li>
+                                                <a href="/Containers/Item/Display/20">Galeria</a>
+                                            </li>
+                                            <li>
+                                                <a href="/kontakt">Kontakt</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div id="content" class="group">
+                    <div class="zone zone-content">
+                        <article class="content-item blog">
+                            <header>
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-front">
+                                        <!-- ribbon text goes here -->
+                                        <div id="articleTitle">
+                                            Aktualno&#197;&#8250;ci
+                                        </div>
+                                    </div>
+                                    <div class="ribbon-edge-topleft"></div>
+                                    <div class="ribbon-edge-topright"></div>
+                                    <div class="ribbon-edge-bottomleft">
+                                    </div>
+                                    <div class="ribbon-edge-bottomright">
+                                    </div>
+                                    <div class="ribbon-back-left"></div>
+                                    <div class="ribbon-back-right"></div>
+                                </div>
+                            </header>
+                            <ul class="blog-posts content-items">
+                                @for (int i = 0; i < Model.Length; i++)
+                                {
+
+                                    string itemClass = i == 0 ? "first" : string.Empty;
+                                    KoloLos.Models.Abstract articleAbstract = Model[i];
+                                    
+                                    <li class="@itemClass">
+                                        <article class="content-item blog-post">
+                                            <header>
+                                                <h1>
+                                                    <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">@articleAbstract.Title</a>
+                                                </h1>
+                                                <div class="metadata">
+                                                    <div class="published">
+                                                        cze 3 2013
+                                                    9:13
+                                                    </div>
+                                                </div>
+                                            </header>
+                                            <p>
+                                                @articleAbstract.Content
+                                            <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">więcej</a>
+                                            </p>
+                                        </article>
+                                    </li>
+                                }
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/praca-na-rzecz-ko&#197;&#8218;a-2">Praca na rzecz Ko&#197;&#8218;a</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    maj 28 2013
+                                                    9:23
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            W dniu 1 czerwca 2013 &#197;owczy
+                                            Ko&#197;&#8218;a organizuje prace
+                                            gospodarcze i inwestycyjne na rzecz
+                                            Ko&#197;&#8218;a. Wszyscy
+                                            ch&#196;&#8482;tni do pracy powinni
+                                            si&#196;&#8482;
+                                            skontaktowa&#196;&#8225; z &#197;owczym
+                                            w celu uzgodnienia
+                                            szczeg&#243;&#197;&#8218;&#243;w. 
+                                            <a href="/aktualnosci/praca-na-rzecz-ko&#197;&#8218;a-2">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/trening-strzelecki-2013">Trening strzelecki</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    maj 28 2013
+                                                    8:38
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            Ko&#197;&#8218;o nasze w dniu 25
+                                            maja 2013 przeprowadzi&#197;&#8218;o
+                                            szkolenie strzeleckie wraz z zawodami o
+                                            puchar przechodni Ko&#197;&#8218;a na
+                                            strzelnicy w Fiuku. Strzelane
+                                            by&#197;&#8218;y wszystkie konkurencje
+                                            &#197;&#8250;rutowe. Zawody
+                                            prowadzone&#160;&#8230; 
+                                            <a href="/aktualnosci/trening-strzelecki-2013">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/kurs-instruktorski">Kurs instruktorski</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    maj 28 2013
+                                                    8:29
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            Zarz&#196;&#8230;d
+                                            Okr&#196;&#8482;gowy PZ&#197; w
+                                            Krakowie organizuje w dniach 15 i 16
+                                            czerwca 2013 w siedzibie
+                                            zarz&#196;&#8230;du przy ulicy
+                                            &#197;&#187;ywieckiej 12 w Krakowie,
+                                            kurs dla instruktor&#243;w i
+                                            s&#196;&#8482;dzi&#243;w
+                                            strzelectwa&#160;&#8230; 
+                                            <a href="/aktualnosci/kurs-instruktorski">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/zawody-strzeleckie-3">Zawody strzeleckie</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    maj 23 2013
+                                                    9:00
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            Komisja strzelecka OR&#197; w
+                                            Przemy&#197;&#8250;lu wraz z
+                                            Urz&#196;&#8482;dem Miasta organizuje
+                                            zawody strzeleckie o puchar kwartalnika
+                                            &#197;&#8218;owiecko-przyrodniczego
+                                            "&#197;owiec Galicyjski" i puchar
+                                            Prezydenta Miasta
+                                            Przemy&#197;&#8250;la.
+                                            Zawody&#160;&#8230; 
+                                            <a href="/aktualnosci/zawody-strzeleckie-3">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/mistrzostwa-polski">Mistrzostwa Polski</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    maj 23 2013
+                                                    8:19
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            Po raz drugi cz&#197;&#8218;onkowie
+                                            naszego Ko&#197;&#8218;a
+                                            reprezentuj&#196;&#8230;
+                                            okr&#196;&#8482;g tarnowski na
+                                            mistrzostwach Polski w strzelaniach
+                                            my&#197;&#8250;liwskich w Radomiu. Do
+                                            reprezentowania wytypowani zostali kol.
+                                            Piotr Wi&#197;&#8250;niewski,
+                                            kol.&#160;&#8230; 
+                                            <a href="/aktualnosci/mistrzostwa-polski">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/zawody-strzeleckie-2">Zawody strzeleckie</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    kwi 22 2013
+                                                    8:35
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            W dniu 28.04.2013 na strzelnicy
+                                            my&#197;&#8250;liwskiej w
+                                            miejscowo&#197;&#8250;ci Fiuk,
+                                            odb&#196;&#8482;d&#196;&#8230;
+                                            si&#196;&#8482; zawody strzeleckie
+                                            "Puchar wiosny".
+                                            Rozpocz&#196;&#8482;cie zawod&#243;w
+                                            godz. 9:00. Zapraszamy wszystkich
+                                            ch&#196;&#8482;tnych. 
+                                            <a href="/aktualnosci/zawody-strzeleckie-2">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/kurs-straznikow">Kurs stra&#197;&#188;nik&#243;w</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    kwi 22 2013
+                                                    8:32
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            W miesi&#196;&#8230;cu czerwcu 2013
+                                            zostanie zorganizowane przez
+                                            Zarz&#196;&#8230;d Okr&#196;&#8482;gowy
+                                            w Tarnowie kurs
+                                            stra&#197;&#188;nik&#243;w
+                                            &#197;&#8218;owieckich. Wszystkich
+                                            ch&#196;&#8482;tnych prosimy o
+                                            zg&#197;&#8218;aszanie swoich
+                                            kandydatur do zarz&#196;&#8230;du
+                                            Ko&#197;&#8218;a. 
+                                            <a href="/aktualnosci/kurs-straznikow">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/fotografie-mysliwskie">Fotografie
+                                                    my&#197;&#8250;liwskie</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    kwi 22 2013
+                                                    8:30
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            W miesi&#196;&#8230;cach czerwiec -
+                                            sierpie&#197;&#8222;, w muzeum
+                                            okr&#196;&#8482;gowym w
+                                            D&#196;&#8482;bnie organizowana jest
+                                            wystawa pod tytu&#197;&#8218;em:
+                                            My&#197;&#8250;liwy na starej
+                                            fotografii, dlatego zwracamy
+                                            si&#196;&#8482; z
+                                            pro&#197;&#8250;b&#196;&#8230; do
+                                            wszystkich cz&#197;&#8218;onk&#243;w
+                                            Ko&#197;&#8218;a,&#160;&#8230; 
+                                            <a href="/aktualnosci/fotografie-mysliwskie">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                                <li class="last">
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <h1>
+                                                <a href="/aktualnosci/wyjazd-na-targi">Wyjazd na targi</a>
+                                            </h1>
+                                            <div class="metadata">
+                                                <div class="published">
+                                                    kwi 22 2013
+                                                    8:28
+                                                </div>
+                                                <span class="commentcount">0
+                                                    komentarzy</span>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            W dniu 27.04.2013 PZ&#197; w
+                                            Tarnowie organizuje wyjazd na X
+                                            Mi&#196;&#8482;dzynarodowe Targi
+                                            &#197;owiectwa, Strzelectwa i
+                                            Rekreacji: Hubertus Expo 2013.
+                                            Ch&#196;&#8482;tni do wyjazdu powinni
+                                            si&#196;&#8482;
+                                            zg&#197;&#8218;osi&#196;&#8225; do dnia
+                                            23.04 (jedna osoba)&#160;&#8230; 
+                                            <a href="/aktualnosci/wyjazd-na-targi">wi&#196;&#8482;cej</a>
+                                        </p>
+                                    </article>
+                                </li>
+                            </ul>
+                            <ul class="pager group">
+                                <li class="last first">
+                                    <a href="/aktualnosci?page=2">Older</a>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
