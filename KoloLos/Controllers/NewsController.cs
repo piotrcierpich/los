@@ -23,9 +23,9 @@ namespace KoloLos.Controllers
         {
             // TODO this retrieves also main page description
             Article[] articles = articlesRepository.GetLatest(AbstractsPerPageMaxCount);
-            Abstract[] abstracts = articles.Select(article =>
+            ArticleAbstract[] abstracts = articles.Select(article =>
                                                        {
-                                                           Abstract articleAbstract = new Abstract();
+                                                           ArticleAbstract articleAbstract = new ArticleAbstract();
                                                            articleAbstract.InjectFrom(article);
                                                            return articleAbstract;
                                                        })

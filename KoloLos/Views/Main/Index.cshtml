@@ -95,7 +95,7 @@
                                 {
                                     liClass = "last";
                                 }
-                                Abstract currentAbstract = Model.Abstracts[i];
+                                ArticleAbstract articleAbstract = Model.Abstracts[i];
 
                                 <li class="@liClass">
                                     <article class="content-item blog-post">
@@ -103,7 +103,7 @@
                                             <div class="small-ribbon-wrapper">
                                                 <div class="small-ribbon-front">
                                                     <div class="homepageNews">
-                                                        @Html.ActionLink(currentAbstract.Title, "Details", "News", new { id = currentAbstract.Id }, null)
+                                                        @Html.ActionLink(articleAbstract.Title, "Details", "News", new { id = articleAbstract.Id }, null)
                                                     </div>
                                                 </div>
                                                 <div class="small-ribbon-edge-topright">
@@ -119,8 +119,8 @@
                                             </div>
                                         </header>
                                         <p>
-                                            @currentAbstract.Content
-                                            @Html.ActionLink("więcej", "Details", "News", new { id = currentAbstract.Id }, null)
+                                            @articleAbstract.Abstract
+                                            @Html.ActionLink("więcej", "Details", "News", new { id = articleAbstract.Id }, null)
                                         </p>
                                     </article>
                                 </li>

@@ -37,12 +37,12 @@ namespace KoloLos.Controllers
             return View(homeModel);
         }
 
-        private Abstract[] GetLatestAbstracts()
+        private ArticleAbstract[] GetLatestAbstracts()
         {
             Article[] articles = articlesRepository.GetLatest(LatestArticlesCount);
-            Abstract[] abstracts = articles.Select(article =>
+            ArticleAbstract[] abstracts = articles.Select(article =>
                                                        {
-                                                           var articleAbstract = new Abstract();
+                                                           var articleAbstract = new ArticleAbstract();
                                                            articleAbstract.InjectFrom(article);
                                                            return articleAbstract;
                                                        })

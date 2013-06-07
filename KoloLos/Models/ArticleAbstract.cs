@@ -1,9 +1,9 @@
 ﻿namespace KoloLos.Models
 {
-    public class Abstract
+    public class ArticleAbstract
     {
         public int Id { get; set; }
-        public string Content { get; set; }
+        public string Abstract { get; set; }
         public string Title { get; set; }
     }
 }
