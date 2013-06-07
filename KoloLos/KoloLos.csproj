@@ -169,7 +169,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
-    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\NewsDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

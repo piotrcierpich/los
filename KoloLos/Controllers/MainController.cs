@@ -31,13 +31,13 @@ namespace KoloLos.Controllers
             Category mainPageCategory = categoryRepository.GetByNameOrNull(MainPageCategoryName);
             Article mainPageArticle = articlesRepository.GetByCategory(mainPageCategory.Id).First();
 
-            HomeModel homeModel = new HomeModel
+            MainPageModel mainPageModel = new MainPageModel
             {
                 DescriptionTitle = mainPageArticle.Title,
                 Description = mainPageArticle.Content,
                 Abstracts = GetLatestAbstracts()
             };
-            return View(homeModel);
+            return View(mainPageModel);
         }
 
         private ArticleAbstract[] GetLatestAbstracts()

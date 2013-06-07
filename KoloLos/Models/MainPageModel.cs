@@ -1,6 +1,6 @@
 ﻿namespace KoloLos.Models
 {
-    public class HomeModel
+    public class MainPageModel
     {
         public ArticleAbstract[] Abstracts { get; set; }
         public string DescriptionTitle { get; set; }
