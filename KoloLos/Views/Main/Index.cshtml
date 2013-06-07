@@ -1,141 +1,145 @@
-﻿@model KoloLos.Models.HomeModel
+﻿@using KoloLos.Models
+@model HomeModel
 
 @{
     ViewBag.Title = "Home page";
 }
-
-<div id="layout-content" class="group shadow-box hasColumnAside">
-    <header id="layout-header" class="group">
-        <div id="header">
-            <div id="logo">
-                <div class="zone zone-header">
-                    <div id="branding">
-                        <a href="./">
-                            <img src="/Content/pics/logow.png" border="0" />
-                        </a>
-                    </div>
-                </div>
-                <div id="layout-navigation" class="group">
-                    <div class="zone zone-navigation">
-                        <nav>
-                            <ul class="menu menu-main">
-                                <li class="current">
-                                    <a href="/">Strona
-                              g&#197;&#8218;&#243;wna</a>
-                                </li>
-                                <li>
-                                    <a href="/aktualnosci">Aktualno&#197;&#8250;ci</a>
-                                </li>
-                                <li>
-                                    <a href="/uchwaly">Uchwały</a>
-                                </li>
-                                <li>
-                                    <a href="/historia">Historia
+<div class="aside-2" id="layout-wrapper">
+    <div id="layout-main-container">
+        <div id="layout-main" class="group">
+            <div id="layout-content" class="group shadow-box hasColumnAside">
+                <header id="layout-header" class="group">
+                    <div id="header">
+                        <div id="logo">
+                            <div class="zone zone-header">
+                                <div id="branding">
+                                    <a href="./">
+                                        <img src="/Content/pics/logow.png" border="0" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="layout-navigation" class="group">
+                                <div class="zone zone-navigation">
+                                    <nav>
+                                        <ul class="menu menu-main">
+                                            <li class="current">
+                                                <a href="/">Strona główna</a>
+                                            </li>
+                                            <li>
+                                                <a href="/aktualnosci">Aktualności</a>
+                                            </li>
+                                            <li>
+                                                <a href="/uchwaly">Uchwały</a>
+                                            </li>
+                                            <li>
+                                                <a href="/historia">Historia
                               koła</a>
-                                </li>
-                                <li>
-                                    <a href="/Containers/Item/Display/20">Galeria</a>
-                                </li>
-                                <li>
-                                    <a href="/kontakt">Kontakt</a>
-                                </li>
-                            </ul>
-                        </nav>
+                                            </li>
+                                            <li>
+                                                <a href="/Containers/Item/Display/20">Galeria</a>
+                                            </li>
+                                            <li>
+                                                <a href="/kontakt">Kontakt</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <div id="content" class="group">
+                    <div class="zone zone-content">
+                        <article class="content-item page">
+                            <header>
+                                <div class="ribbon-wrapper">
+                                    <div class="ribbon-front">
+                                        <!-- ribbon text goes here -->
+                                        <div id="articleTitle">
+                                            @Model.DescriptionTitle
+                                        </div>
+                                    </div>
+                                    <div class="ribbon-edge-topleft"></div>
+                                    <div class="ribbon-edge-topright"></div>
+                                    <div class="ribbon-edge-bottomleft"></div>
+                                    <div class="ribbon-edge-bottomright"></div>
+                                    <div class="ribbon-back-left"></div>
+                                    <div class="ribbon-back-right"></div>
+                                </div>
+                            </header>
+                            @Model.Description
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <div id="content" class="group">
-        <div class="zone zone-content">
-            <article class="content-item page">
-                <header>
-                    <div class="ribbon-wrapper">
-                        <div class="ribbon-front">
-                            <!-- ribbon text goes here -->
-                            <div id="articleTitle">
-                                O kole łowieckim
-                            </div>
+            <aside id="aside-second"
+                class="aside-second shadow-box">
+                <div class="zone zone-aside-second">
+                    <article class="widget">
+
+                        <header>
+                            <h1>Aktualności</h1>
+                        </header>
+
+
+                        <ul class="blog-posts content-items">
+
+                            @for (int i = 0; i < Model.Abstracts.Count(); i++)
+                            {
+                                string liClass = string.Empty;
+                                if (i == 0)
+                                {
+                                    liClass = "first";
+                                }
+                                else if (i == Model.Abstracts.Count() - 1)
+                                {
+                                    liClass = "last";
+                                }
+                                Abstract currentAbstract = Model.Abstracts[i];
+
+                                <li class="@liClass">
+                                    <article class="content-item blog-post">
+                                        <header>
+                                            <div class="small-ribbon-wrapper">
+                                                <div class="small-ribbon-front">
+                                                    <div class="homepageNews">
+                                                        @Html.ActionLink(currentAbstract.Title, "Details", "News", new { id = currentAbstract.Id }, null)
+                                                    </div>
+                                                </div>
+                                                <div class="small-ribbon-edge-topright">
+                                                </div>
+                                                <div class="small-ribbon-edge-bottomleft">
+                                                </div>
+                                                <div class="small-ribbon-edge-bottomright">
+                                                </div>
+                                                <div class="small-ribbon-back-left">
+                                                </div>
+                                                <div class="small-ribbon-back-right">
+                                                </div>
+                                            </div>
+                                        </header>
+                                        <p>
+                                            @currentAbstract.Content
+                                            @Html.ActionLink("więcej", "Details", "News", new { id = currentAbstract.Id }, null)
+                                        </p>
+                                    </article>
+                                </li>
+                            }
+
+                        </ul>
+                    </article>
+                    <article class="widget">
+
+                        <header>
+                            <h1>Ostatnia galeria</h1>
+                        </header>
+                        <div id="slideshow">
+                            <img height="188" src="/Content/pics/IMG_5036.JPG"
+                                width="250" />
                         </div>
-                        <div class="ribbon-edge-topleft"></div>
-                        <div class="ribbon-edge-topright"></div>
-                        <div class="ribbon-edge-bottomleft"></div>
-                        <div class="ribbon-edge-bottomright"></div>
-                        <div class="ribbon-back-left"></div>
-                        <div class="ribbon-back-right"></div>
-                    </div>
-                </header>
-                <p>Serdecznie witamy na stronie Kola Lowieckiego nr 19 Los w Tarnowie wszystkich Koleg&oacute;w Mysliwych i sympatyk&oacute;w lowiectwa.</p>
-                <p>Zalazki powstania kola lowieckiego Los w Tarnowie siegaja roku 1925, kiedy to w Zakladach Zwiazk&oacute;w Azotowych powstala organizacja lowiecka, kt&oacute;ra bardzo preznie dzialala w okresie miedzywojennym. Wojna przerwala funkcjonowanie zwiazku, lecz zaraz po jej zakonczeniu w 1945r. dzialacze, kt&oacute;rzy powr&oacute;cili do Zakladu utworzyli kolo lowieckie, a 1 stycznia 1946 r. oficjalnie go zarejestrowali jako Kolo nr 2. W 1957 r. kolo otrzymalo nazwe "Los", a 30 stycznia 1960 zostalo zarejestrowane pod numerem 19, zgodnie ze statutem Polskiego Zwiazku Lowieckiego. Gospodaruje na dw&oacute;ch obwodach nr 63 o powierzchni 6010ha i nr 109 o powierzchni calkowitej 7064ha.</p>
-                <p>Kolo liczy 45 czlonk&oacute;w.</p>
-            </article>
+                    </article>
+                </div>
+            </aside>
         </div>
     </div>
 </div>
-<aside id="aside-second"
-    class="aside-second shadow-box">
-    <div class="zone zone-aside-second">
-        <article class="widget">
-
-            <header>
-                <h1>Aktualności</h1>
-            </header>
-
-
-            <ul class="blog-posts content-items">
-
-                @for (int i = 0; i < Model.Abstracts.Count(); i++)
-                {
-                    string liClass = string.Empty;
-                    if (i == 0)
-                    {
-                        liClass = "first";
-                    }
-                    else if (i == Model.Abstracts.Count() - 1)
-                    {
-                        liClass = "last";
-                    }
-
-                    <li class="@liClass">
-                        <article class="content-item blog-post">
-                            <header>
-                                <div class="small-ribbon-wrapper">
-                                    <div class="small-ribbon-front">
-                                        <div class="homepageNews">
-                                            <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">@Model.Abstracts[i].Title</a>
-                                        </div>
-                                    </div>
-                                    <div class="small-ribbon-edge-topright">
-                                    </div>
-                                    <div class="small-ribbon-edge-bottomleft">
-                                    </div>
-                                    <div class="small-ribbon-edge-bottomright">
-                                    </div>
-                                    <div class="small-ribbon-back-left">
-                                    </div>
-                                    <div class="small-ribbon-back-right">
-                                    </div>
-                                </div>
-                            </header>
-                            <p>
-                                @Model.Abstracts[i].Content
-                                <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">więcej</a>
-                            </p>
-                        </article>
-                    </li>
-                }
-              
-            </ul>
-        </article>
-        <article class="widget">
-
-            <header>
-                <h1>Ostatnia galeria</h1>
-            </header>
-            <div id="slideshow">
-                <img height="188" src="/Content/pics/IMG_5036.JPG"
-                    width="250" />
-            </div>
-        </article>
-    </div>
-</aside>

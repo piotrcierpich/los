@@ -164,6 +164,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -175,6 +176,7 @@
     <Content Include="Content\pics\IMG_5036.JPG" />
     <Content Include="Content\pics\logow.png" />
     <Content Include="Content\pics\losbaner.jpg" />
+    <Content Include="Content\pics\LosBanerSzeroki.jpg" />
     <Content Include="Content\ribbon.css" />
     <Content Include="Content\table.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -279,6 +281,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\News\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
