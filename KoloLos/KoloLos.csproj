@@ -286,6 +286,7 @@
     <Content Include="Views\News\Details.cshtml" />
     <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Shared\MenuPartial.cshtml" />
+    <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
