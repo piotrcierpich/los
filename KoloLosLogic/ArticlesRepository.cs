@@ -4,7 +4,7 @@ using System.Linq;
 namespace KoloLosLogic
 {
     public class ArticlesRepository
-    {
+    { 
         private readonly IDbSet<Article> articles;
 
         public ArticlesRepository(IDbSet<Article> articles)

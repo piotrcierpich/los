@@ -1,4 +1,4 @@
-﻿@model KoloLos.Models.ArticleAbstract[]
+﻿@model KoloLos.Models.NewsList
 
 @{
     ViewBag.Title = "title";
@@ -30,7 +30,7 @@
                                     <div class="ribbon-front">
                                         <!-- ribbon text goes here -->
                                         <div id="articleTitle">
-                                            Aktualno&#197;&#8250;ci
+                                            Aktualności
                                         </div>
                                     </div>
                                     <div class="ribbon-edge-topleft"></div>
@@ -44,11 +44,11 @@
                                 </div>
                             </header>
                             <ul class="blog-posts content-items">
-                                @for (int i = 0; i < Model.Length; i++)
+                                @for (int i = 0; i < Model.ArticleAbstracts.Length; i++)
                                 {
 
                                     string itemClass = i == 0 ? "first" : string.Empty;
-                                    KoloLos.Models.ArticleAbstract articleAbstract = Model[i];
+                                    KoloLos.Models.ArticleAbstract articleAbstract = Model.ArticleAbstracts[i];
                                     
                                     <li class="@itemClass">
                                         <article class="content-item blog-post">
@@ -58,8 +58,7 @@
                                                 </h1>
                                                 <div class="metadata">
                                                     <div class="published">
-                                                        cze 3 2013
-                                                    9:13
+                                                        @articleAbstract.PublishDate
                                                     </div>
                                                 </div>
                                             </header>
@@ -72,16 +71,16 @@
                                 }
                                 </ul>
                                 <ul class="pager group">
-                                    @if (ViewBag.PreviousPageExists)
+                                    @if (Model.PreviousPageExists)
                                     {
                                         <li>
-                                            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = ViewBag.PreviousPageIndex }, null)
+                                            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = Model.PreviousPageIndex }, null)
                                         </li>
                                     }
-                                    @if (ViewBag.NextPageExists)
+                                    @if (Model.NextPageExists)
                                     {
                                         <li>
-                                            @Html.ActionLink("Następne", "Index", new {pageIndex = ViewBag.NextPageIndex}, null)
+                                            @Html.ActionLink("Następne", "Index", new {pageIndex = Model.NextPageIndex}, null)
                                         </li>
                                     }
                                 </ul>

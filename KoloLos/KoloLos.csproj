@@ -171,6 +171,7 @@
     <Compile Include="Models\ArticleAbstract.cs" />
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\NewsDetail.cs" />
+    <Compile Include="Models\NewsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

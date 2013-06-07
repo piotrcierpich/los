@@ -21,31 +21,28 @@ namespace KoloLos.Controllers
 
         public ActionResult Index(int pageIndex = 0)
         {
-            if (pageIndex == 0)
-            {
-                ViewBag.NextPageExists = (pageIndex + 1) * AbstractsPerPageMaxCount < articlesRepository.Count;
-                ViewBag.PreviousPageExists = false;
-                ViewBag.NextPageIndex = 1;
-            }
-            else
-            {
-                ViewBag.NextPageExists = (pageIndex + 1) * AbstractsPerPageMaxCount < articlesRepository.Count;
-                ViewBag.PreviousPageExists = true;
-                ViewBag.PreviousPageIndex = pageIndex - 1;
-                ViewBag.NextPageIndex = pageIndex + 1;
-            }
+            NewsList newsList = new NewsList
+                                    {
+                                            NextPageExists = (pageIndex + 1) * AbstractsPerPageMaxCount < articlesRepository.Count,
+                                            PreviousPageExists = pageIndex > 0,
+                                            PreviousPageIndex = pageIndex - 1,
+                                            NextPageIndex = pageIndex + 1,
+                                            ArticleAbstracts = GetAbstractsForPageIndex(pageIndex)
+                                    };
 
             // TODO this retrieves also main page description
+            return View(newsList);
+        }
 
+        private ArticleAbstract[] GetAbstractsForPageIndex(int pageIndex)
+        {
             Article[] articles = articlesRepository.GetLatest(pageIndex * AbstractsPerPageMaxCount, AbstractsPerPageMaxCount);
-            ArticleAbstract[] abstracts = articles.Select(article =>
-                                                       {
-                                                           ArticleAbstract articleAbstract = new ArticleAbstract();
-                                                           articleAbstract.InjectFrom(article);
-                                                           return articleAbstract;
-                                                       })
-                                                 .ToArray();
-            return View(abstracts);
+            return articles.Select(article => {
+                                                ArticleAbstract articleAbstract = new ArticleAbstract();
+                                                articleAbstract.InjectFrom(article);
+                                                return articleAbstract;
+                                              })
+                           .ToArray();
         }
 
         public ActionResult Details(int id)
