@@ -1469,7 +1469,7 @@ body
 {
     margin-left: auto;
     margin-right: auto;
-    background: url('LosBanerSzeroki.jpg');
+    background: url('/Content/pics/LosBanerSzeroki.jpg');
     background-repeat: no-repeat;
     height: 330px;
     width: 960px;
@@ -1480,7 +1480,7 @@ body
 {
     margin-left: auto;
     margin-right: auto;
-    background: url('losbaner.jpg');
+    background: url('/Content/pics/losbaner.jpg');
     background-repeat: no-repeat;
     height: 330px;
     width: 650px;
