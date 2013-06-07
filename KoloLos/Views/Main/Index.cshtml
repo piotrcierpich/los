@@ -102,7 +102,7 @@
                                 <div class="small-ribbon-wrapper">
                                     <div class="small-ribbon-front">
                                         <div class="homepageNews">
-                                            <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">@Model.Abstracts.First().Title</a>
+                                            <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">@Model.Abstracts[i].Title</a>
                                         </div>
                                     </div>
                                     <div class="small-ribbon-edge-topright">
@@ -118,7 +118,7 @@
                                 </div>
                             </header>
                             <p>
-                                @Model.Abstracts.First().Content
+                                @Model.Abstracts[i].Content
                                 <a href="/aktualnosci/prace-na-rzecz-ko&#197;&#8218;a">więcej</a>
                             </p>
                         </article>

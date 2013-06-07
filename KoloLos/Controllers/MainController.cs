@@ -49,7 +49,8 @@ namespace KoloLos.Controllers
                 articleAbstract.InjectFrom(article);
                 return articleAbstract;
             })
-                                           .ToArray();
+            .ToArray();
+
             return abstracts;
         }
 
