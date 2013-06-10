@@ -31,6 +31,8 @@ namespace KoloLosCommon
         public virtual string Content { get; set; }
         public virtual string Title { get; set; }
         public virtual string Author { get; set; }
+
+        //TODO calculate it
         public virtual string Abstract { get; set; }
         public virtual Category Category { get; set; }
     }

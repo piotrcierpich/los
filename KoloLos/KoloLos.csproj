@@ -302,6 +302,10 @@
       <Project>{020CC762-7661-4128-87F7-9FFE3749A497}</Project>
       <Name>KoloLosDataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KoloLosUtils\KoloLosUtils.csproj">
+      <Project>{E33852D0-C68B-4904-BCE5-447ED64F7DA4}</Project>
+      <Name>KoloLosUtils</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

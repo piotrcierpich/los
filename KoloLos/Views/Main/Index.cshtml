@@ -41,7 +41,7 @@
                                     <div class="ribbon-back-right"></div>
                                 </div>
                             </header>
-                            @Model.Description
+                            @Html.Raw(Model.Description)
                         </article>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                                             </div>
                                         </header>
                                         <p>
-                                            @articleAbstract.Abstract
+                                            @Html.RemoveMarkup(articleAbstract.Abstract)
                                             @Html.ActionLink("więcej", "Details", "News", new { id = articleAbstract.Id }, null)
                                         </p>
                                     </article>
