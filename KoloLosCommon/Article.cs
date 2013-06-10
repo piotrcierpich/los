@@ -4,6 +4,22 @@ namespace KoloLosCommon
 {
     public class Article
     {
+        public readonly static Article Empty;
+
+        static Article()
+        {
+            Empty = new Article
+                        {
+                                Id = 0,
+                                Title = string.Empty,
+                                Abstract = string.Empty,
+                                Author = string.Empty,
+                                Category = Category.Main,
+                                Content = string.Empty,
+                                PublishDate = DateTime.UtcNow
+                        };
+        }
+
         private DateTime publishDate = DateTime.Now;
         public virtual DateTime PublishDate
         {

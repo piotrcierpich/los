@@ -1,0 +1,13 @@
+﻿@model KoloLosCommon.Article
+
+@{
+    Layout = "~/Views/Shared/SingleColumnLayout.cshtml";
+    ViewBag.Title = "title";
+}
+
+@section articleTitle
+{
+    Historia koła
+}
+
+<p>@Model.Content</p>
