@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-using KoloLosLogic;
+using KoloLosCommon;
 
 namespace KoloLosDataLayer
 {
@@ -16,6 +16,5 @@ namespace KoloLosDataLayer
         }
 
         public DbSet<Article> Articles { get; set; }
-        public DbSet<Category> Categories { get; set; }
     }
 }

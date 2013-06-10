@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 using KoloLos.Models;
 
-using KoloLosLogic;
+using KoloLosCommon;
 
 using Omu.ValueInjecter;
 
@@ -14,22 +13,18 @@ namespace KoloLos.Controllers
 {
     public class MainController : Controller
     {
-        private const string MainPageCategoryName = "Main page";
         private const int LatestArticlesCount = 3;
 
-        private readonly ArticlesRepository articlesRepository;
-        private readonly CategoryRepository categoryRepository;
+        private readonly IDbSet<Article> articles;
 
-        public MainController(ArticlesRepository articlesRepository, CategoryRepository categoryRepository)
+        public MainController(IDbSet<Article> articles)
         {
-            this.articlesRepository = articlesRepository;
-            this.categoryRepository = categoryRepository;
+            this.articles = articles;
         }
 
         public ActionResult Index()
         {
-            Category mainPageCategory = categoryRepository.GetByNameOrNull(MainPageCategoryName);
-            Article mainPageArticle = articlesRepository.GetByCategory(mainPageCategory.Id).First();
+            Article mainPageArticle = GetMainPageArticle();
 
             MainPageModel mainPageModel = new MainPageModel
             {
@@ -40,104 +35,30 @@ namespace KoloLos.Controllers
             return View(mainPageModel);
         }
 
+        private Article GetMainPageArticle()
+        {
+            return articles.First(article => article.Category == Category.Main);
+        }
+
         private ArticleAbstract[] GetLatestAbstracts()
         {
-            Article[] articles = articlesRepository.GetLatest(LatestArticlesCount);
-            ArticleAbstract[] abstracts = articles.Select(article =>
-            {
-                var articleAbstract = new ArticleAbstract();
-                articleAbstract.InjectFrom(article);
-                return articleAbstract;
-            })
-            .ToArray();
+            IEnumerable<Article> latestArticles = GetLatestNewsArticles();
+            ArticleAbstract[] abstracts = latestArticles.Select(article =>
+                                                            {
+                                                                var articleAbstract = new ArticleAbstract();
+                                                                articleAbstract.InjectFrom(article);
+                                                                return articleAbstract;
+                                                            })
+                                                  .ToArray();
 
             return abstracts;
         }
 
-        //
-        // GET: /Main/Details/5
-
-        public ActionResult Details(int id)
+        private IEnumerable<Article> GetLatestNewsArticles()
         {
-            return View();
-        }
-
-        //
-        // GET: /Main/Create
-
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        //
-        // POST: /Main/Create
-
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Main/Edit/5
-
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Main/Edit/5
-
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        //
-        // GET: /Main/Delete/5
-
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /Main/Delete/5
-
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return articles.Where(article => article.Category == Category.News)
+                           .OrderByDescending(article => article.PublishDate)
+                           .Take(LatestArticlesCount);
         }
     }
 }

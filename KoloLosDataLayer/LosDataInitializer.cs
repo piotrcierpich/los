@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-using KoloLosLogic;
+using KoloLosCommon;
 
 namespace KoloLosDataLayer
 {
@@ -13,33 +13,17 @@ namespace KoloLosDataLayer
 
         protected override void Seed(LosDataContext context)
         {
-            Category mainPageCategory = new Category
-                                            {
-                                                Name = "Main page"
-                                            };
-
-            context.Categories.Add(mainPageCategory);
-
             Article mainPageStory = new Article
                                    {
                                        Content = LoremIpsum,
                                        Abstract = AbstractLoremIpsum,
                                        Title = "Main page title",
                                        Author = "Me",
-                                       Category = mainPageCategory,
+                                       Category = Category.Main,
                                        PublishDate = DateTime.Now
                                    };
 
             context.Articles.Add(mainPageStory);
-
-
-            Category newsCategory = new Category
-            {
-                Name = "News"
-            };
-
-            context.Categories.Add(newsCategory);
-
             for (int i = 0; i < 30; i++)
             {
 
@@ -49,7 +33,7 @@ namespace KoloLosDataLayer
                     Abstract = AbstractLoremIpsum,
                     Title = "Title " + i,
                     Author = "Me",
-                    Category = newsCategory,
+                    Category = Category.News,
                     PublishDate = baseDateTime.AddDays(i)
                 };
 

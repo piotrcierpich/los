@@ -162,7 +162,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,9 +274,6 @@
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -296,13 +292,13 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KoloLosCommon\KoloLosCommon.csproj">
+      <Project>{33995842-E41A-4182-9807-726F367844D9}</Project>
+      <Name>KoloLosCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KoloLosDataLayer\KoloLosDataLayer.csproj">
       <Project>{020CC762-7661-4128-87F7-9FFE3749A497}</Project>
       <Name>KoloLosDataLayer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\KoloLosLogic\KoloLosLogic.csproj">
-      <Project>{AAF16FFD-505E-47D8-82AF-35FB13F650AC}</Project>
-      <Name>KoloLosLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

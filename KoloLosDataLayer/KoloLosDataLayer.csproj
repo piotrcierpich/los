@@ -51,14 +51,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KoloLosLogic\KoloLosLogic.csproj">
-      <Project>{aaf16ffd-505e-47d8-82af-35fb13f650ac}</Project>
-      <Name>KoloLosLogic</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KoloLosCommon\KoloLosCommon.csproj">
+      <Project>{33995842-e41a-4182-9807-726f367844d9}</Project>
+      <Name>KoloLosCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
