@@ -19,9 +19,6 @@ namespace KoloLos.Controllers
             this.articles = articles;
         }
 
-        //
-        // GET: /Article/
-
         public ActionResult ByCategory(Category category)
         {
             Article article = articles.First(a => a.Category == category);
@@ -32,5 +29,14 @@ namespace KoloLos.Controllers
             return View("Index", articleDetail);
         }
 
+        public ActionResult ById(int id)
+        {
+            Article article = articles.Find(id);
+
+            ArticleDetail articleDetail = new ArticleDetail();
+            articleDetail.InjectFrom(article);
+
+            return View("Index", articleDetail);
+        }
     }
 }

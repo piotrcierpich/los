@@ -6,19 +6,19 @@
                     <a href="/">Strona główna</a>
                 </li>
                 <li>
-                    @Html.RouteLink("Aktualności", new { listName = "News" })
+                    @Html.RouteLink("Aktualności", "listOfArticles", new { listName = "News" })
                 </li>
                 <li>
-                    @Html.RouteLink("Uchwały", new { listName = "Resolutions" })
+                    @Html.RouteLink("Uchwały", "listOfArticles", new { listName = "Resolutions" })
                 </li>
                 <li>
-                    @Html.RouteLink("Historia koła", new {category = "History"})
+                    @Html.RouteLink("Historia koła", "articleByCategory", new { category = "History" })
                 </li>
                 <li>
                     <a href="/Containers/Item/Display/20">Galeria</a>
                 </li>
                 <li>
-                    @Html.RouteLink("Kontakt", new {category = "Contact"})
+                    @Html.RouteLink("Kontakt", "articleByCategory", new { category = "Contact" })
                 </li>
             </ul>
         </nav>

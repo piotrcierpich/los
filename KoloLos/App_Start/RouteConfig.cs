@@ -9,19 +9,24 @@ namespace KoloLos
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(name: "articleById",
+                            url: "{id}",
+                            defaults: new { controller = "Article", action = "ById" },
+                            constraints: new { id = @"\d+" });
+
+            routes.MapRoute(name: "articleByCategory",
+                            url: "{category}",
+                            defaults: new { controller = "Article", action = "ByCategory" },
+                            constraints: new { category = @"(^History$)|(^Contact$)" });
+
             routes.MapRoute(name: "listOfArticles",
                             url: "{listName}/{pageIndex}",
                             defaults: new { controller = "listOfArticles", action = "Index", pageIndex = 0 },
                             constraints: new { listName = @"(^News$)|(^Resolutions$)", pageIndex = @"\b\d+\b" });
 
-            routes.MapRoute(name: "article",
-                            url: "{category}",
-                            defaults: new { controller = "Article", action = "ByCategory" },
-                            constraints: new { category = @"(^History$)|(^Contact$)" });
-
-            routes.MapRoute(name: "articlesDetails",
-                            url: "Details/{id}",
-                            defaults: new { controller = "listOfArticles", action = "Details", id = 0 });
+            //routes.MapRoute(name: "articlesDetails",
+            //                url: "Details/{id}",
+            //                defaults: new { controller = "listOfArticles", action = "Details", id = 0 });
 
             routes.MapRoute(
                 name: "Default",

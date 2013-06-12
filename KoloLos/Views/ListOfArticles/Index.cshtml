@@ -21,7 +21,7 @@ Aktualności
             <article class="content-item blog-post">
                 <header>
                     <h1>
-                        @Html.RouteLink(articleAbstract.Title, "articlesDetails", new { id = articleAbstract.Id })
+                        @Html.RouteLink(articleAbstract.Title, new { id = articleAbstract.Id })
                     </h1>
                     <div class="metadata">
                         <div class="published">
@@ -31,7 +31,7 @@ Aktualności
                 </header>
                 <p>
                     @articleAbstract.Abstract
-                    @Html.ActionLink("więcej", "Details", new { pageIndex = articleAbstract.Id }, null)
+                    @Html.RouteLink("więcej", new { id = articleAbstract.Id })
                 </p>
             </article>
         </li>
