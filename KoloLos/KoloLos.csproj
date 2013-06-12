@@ -165,7 +165,6 @@
     <Compile Include="Controllers\HistoryController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -281,8 +280,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Views\News\Details.cshtml" />
-    <Content Include="Views\News\Index.cshtml" />
     <Content Include="Views\Shared\MenuPartial.cshtml" />
     <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
     <Content Include="Views\History\Index.cshtml" />
