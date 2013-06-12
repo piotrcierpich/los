@@ -1,6 +1,6 @@
 ﻿namespace KoloLos.Models
 {
-    public class NewsList
+    public class ArticleAbstractsList
     {
         public bool PreviousPageExists { get; set; }
         public bool NextPageExists { get; set; }

@@ -163,6 +163,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HistoryController.cs" />
+    <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -170,8 +171,8 @@
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
     <Compile Include="Models\MainPageModel.cs" />
-    <Compile Include="Models\NewsDetail.cs" />
-    <Compile Include="Models\NewsList.cs" />
+    <Compile Include="Models\ArticleDetail.cs" />
+    <Compile Include="Models\ArticleAbstractsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -285,6 +286,8 @@
     <Content Include="Views\Shared\MenuPartial.cshtml" />
     <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
     <Content Include="Views\History\Index.cshtml" />
+    <Content Include="Views\ListOfArticles\Index.cshtml" />
+    <Content Include="Views\ListOfArticles\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

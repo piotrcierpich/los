@@ -23,7 +23,7 @@ namespace KoloLos.Controllers
 
         public ActionResult Index(int pageIndex = 0)
         {
-            NewsList newsList = new NewsList
+            ArticleAbstractsList newsList = new ArticleAbstractsList
                                     {
                                         NextPageExists = AnyCategoryArticlesOnNextPage(pageIndex + 1),
                                         PreviousPageExists = pageIndex > 0,
@@ -62,7 +62,7 @@ namespace KoloLos.Controllers
         public ActionResult Details(int id)
         {
             Article article = articles.Find(id);
-            NewsDetail newsDetail = new NewsDetail();
+            ArticleDetail newsDetail = new ArticleDetail();
             newsDetail.InjectFrom(article);
 
             return View(newsDetail);

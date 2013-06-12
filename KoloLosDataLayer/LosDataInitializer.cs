@@ -52,6 +52,21 @@ namespace KoloLosDataLayer
                 context.Articles.Add(news1);
             }
 
+            for (int i = 0; i < 12; i++)
+            {
+                Article resolution = new Article
+                {
+                    Content = LoremIpsumWithMarkup,
+                    Abstract = LoremIpsumAbstract,
+                    Title = "Resolution title " + i,
+                    Author = "Me",
+                    Category = Category.Resolutions,
+                    PublishDate = baseDateTime.AddDays(i)
+                };
+
+                context.Articles.Add(resolution);
+            }
+
             context.SaveChanges();
         }
     }

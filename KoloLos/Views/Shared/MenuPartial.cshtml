@@ -6,10 +6,10 @@
                     <a href="/">Strona główna</a>
                 </li>
                 <li>
-                    @Html.ActionLink("Aktualności", "Index", "News")
+                    @Html.RouteLink("Aktualności", new { listName = "News" })
                 </li>
                 <li>
-                    <a href="/uchwaly">Uchwały</a>
+                    @Html.RouteLink("Uchwały", new { listName = "Resolutions" })
                 </li>
                 <li>
                     @Html.ActionLink("Historia koła", "Index", "History")
