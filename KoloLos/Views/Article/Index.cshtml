@@ -1,0 +1,13 @@
+﻿@model KoloLos.Models.ArticleDetail
+
+@{
+    ViewBag.Title = "Koło Łoś " + Model.Title;
+    Layout = "~/Views/Shared/SingleColumnLayout.cshtml";
+}
+
+@section articleTitle
+{
+    @Model.Title
+}
+
+<p>@Html.Raw(Model.Content)</p>

@@ -162,7 +162,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HistoryController.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Global.asax.cs">
@@ -282,9 +282,9 @@
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\Shared\MenuPartial.cshtml" />
     <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
-    <Content Include="Views\History\Index.cshtml" />
     <Content Include="Views\ListOfArticles\Index.cshtml" />
     <Content Include="Views\ListOfArticles\Details.cshtml" />
+    <Content Include="Views\Article\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

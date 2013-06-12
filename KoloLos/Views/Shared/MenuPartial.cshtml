@@ -12,13 +12,13 @@
                     @Html.RouteLink("Uchwały", new { listName = "Resolutions" })
                 </li>
                 <li>
-                    @Html.ActionLink("Historia koła", "Index", "History")
+                    @Html.RouteLink("Historia koła", new {category = "History"})
                 </li>
                 <li>
                     <a href="/Containers/Item/Display/20">Galeria</a>
                 </li>
                 <li>
-                    <a href="/kontakt">Kontakt</a>
+                    @Html.RouteLink("Kontakt", new {category = "Contact"})
                 </li>
             </ul>
         </nav>

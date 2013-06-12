@@ -36,6 +36,18 @@ namespace KoloLosDataLayer
 
             context.Articles.Add(history);
 
+            Article contact = new Article
+            {
+                Content = LoremIpsumWithMarkup,
+                Abstract = LoremIpsumAbstract,
+                Title = "Kontakt",
+                Author = "Me",
+                Category = Category.Contact,
+                PublishDate = DateTime.Now
+            };
+
+            context.Articles.Add(contact);
+
             for (int i = 0; i < 30; i++)
             {
 

@@ -1,4 +1,11 @@
 ﻿namespace KoloLosCommon
 {
-    public enum Category { Main, News, History, Resolutions }
+    public enum Category
+    {
+        Main, 
+        News, 
+        History, 
+        Resolutions,
+        Contact
+    }
 }
