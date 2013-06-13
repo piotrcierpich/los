@@ -24,8 +24,9 @@ namespace KoloLos.Controllers
 
         public ActionResult Index(Category listName, int pageIndex)
         {
-            ArticleAbstractsList newsList = new ArticleAbstractsList
+            ArticleAbstractsList articleAbstracts = new ArticleAbstractsList
             {
+                Category = listName,
                 NextPageExists = AnyCategoryArticlesOnNextPage(pageIndex + 1),
                 PreviousPageExists = pageIndex > 0,
                 PreviousPageIndex = pageIndex - 1,
@@ -33,7 +34,7 @@ namespace KoloLos.Controllers
                 ArticleAbstracts = GetAbstractsForPageIndex(listName, pageIndex)
             };
 
-            return View(newsList);
+            return View(articleAbstracts);
         }
 
         private bool AnyCategoryArticlesOnNextPage(int nextPageIndex)
