@@ -77,7 +77,7 @@
                                             <div class="small-ribbon-wrapper">
                                                 <div class="small-ribbon-front">
                                                     <div class="homepageNews">
-                                                        @Html.ActionLink(articleAbstract.Title, "Details", "News", new { id = articleAbstract.Id }, null)
+                                                        @Html.RouteLink(articleAbstract.Title, "articleById", new { id = articleAbstract.Id })
                                                     </div>
                                                 </div>
                                                 <div class="small-ribbon-edge-topright">
@@ -94,7 +94,7 @@
                                         </header>
                                         <p>
                                             @Html.RemoveMarkup(articleAbstract.Abstract)
-                                            @Html.ActionLink("więcej", "Details", "News", new { id = articleAbstract.Id }, null)
+                                            @Html.RouteLink("więcej", "articleById", new { id = articleAbstract.Id })
                                         </p>
                                     </article>
                                 </li>
