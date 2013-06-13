@@ -30,7 +30,7 @@ Aktualności
                     </div>
                 </header>
                 <p>
-                    @articleAbstract.Abstract
+                    @Html.RemoveMarkup(articleAbstract.Abstract)
                     @Html.RouteLink("więcej", new { id = articleAbstract.Id })
                 </p>
             </article>
