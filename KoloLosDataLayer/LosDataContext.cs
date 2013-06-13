@@ -4,7 +4,7 @@ using KoloLosCommon;
 
 namespace KoloLosDataLayer
 {
-    public class LosDataContext : DbContext
+    public class LosDataContext : DbContext, ILosRepository
     {
         public LosDataContext()
             : base("KoloLos")
