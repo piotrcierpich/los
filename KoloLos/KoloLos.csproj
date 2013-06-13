@@ -293,7 +293,6 @@
     <Content Include="Views\Shared\MenuPartial.cshtml" />
     <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
     <Content Include="Views\ListOfArticles\Index.cshtml" />
-    <Content Include="Views\ListOfArticles\Details.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>

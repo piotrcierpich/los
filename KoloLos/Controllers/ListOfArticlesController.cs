@@ -60,15 +60,5 @@ namespace KoloLos.Controllers
                            .Skip(skip)
                            .Take(count);
         }
-
-        //TODO test it out
-        public ActionResult Details(int id)
-        {
-            Article article = articles.Find(id);
-            ArticleDetail newsDetail = new ArticleDetail();
-            newsDetail.InjectFrom(article);
-
-            return View(newsDetail);
-        }
     }
 }
