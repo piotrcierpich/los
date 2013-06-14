@@ -176,7 +176,6 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\SampleController.cs" />
-    <Compile Include="Controllers\SampleEfController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -250,7 +249,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\manager.css" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\manager-content-bg.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -298,11 +299,10 @@
     <Content Include="Views\ListOfArticles\Index.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
-    <Content Include="Views\SampleEf\Index.cshtml" />
-    <Content Include="Views\SampleEf\Details.cshtml" />
-    <Content Include="Views\SampleEf\Create.cshtml" />
-    <Content Include="Views\SampleEf\Edit.cshtml" />
-    <Content Include="Views\SampleEf\Delete.cshtml" />
+    <Content Include="Views\Manager\Details.cshtml" />
+    <Content Include="Views\Manager\Create.cshtml" />
+    <Content Include="Views\Manager\Edit.cshtml" />
+    <Content Include="Views\Manager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
