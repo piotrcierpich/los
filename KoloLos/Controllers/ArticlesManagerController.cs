@@ -1,15 +1,19 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
+
 using KoloLosCommon;
 
 namespace KoloLos.Controllers
 {
-    public class ManagerController : Controller
+    public class ArticlesManagerController : Controller
     {
-        private readonly ILosRepository losRepository;
+       private readonly ILosRepository losRepository;
 
-        public ManagerController(ILosRepository losRepository)
+       public ArticlesManagerController(ILosRepository losRepository)
         {
             this.losRepository = losRepository;
         }
@@ -120,5 +124,6 @@ namespace KoloLos.Controllers
             losRepository.Dispose();
             base.Dispose(disposing);
         }
+
     }
 }

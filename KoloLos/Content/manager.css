@@ -7,19 +7,19 @@
 
 body
 {
-    font-size: 62.5%;
+    font-size: 100.0%;
     font-family: Garamond, sans-serif;
     background: url("/Images/manager-content-bg.png") left repeat-y #FFFADA;
 }
 
 h1
 {
-    font-size: 4.0em;
+    font-size: 2.0em;
 }
 
 p, li
 {
-    font-size: 1.8em;
+    font-size: 1.2em;
 }
 
 .clear
