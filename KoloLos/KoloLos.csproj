@@ -185,6 +185,7 @@
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
     <Compile Include="Models\ArticleAbstractsList.cs" />
+    <Compile Include="Models\Manager\ArticleEdit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

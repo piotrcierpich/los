@@ -5,7 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KoloLos.Models.Manager;
+
 using KoloLosCommon;
+
+using Omu.ValueInjecter;
 
 namespace KoloLos.Controllers
 {
@@ -74,7 +78,9 @@ namespace KoloLos.Controllers
             {
                 return HttpNotFound();
             }
-            return View(article);
+            ArticleEdit articleEdit = new ArticleEdit();
+            articleEdit.InjectFrom(article);
+            return View(articleEdit);
         }
 
         //
@@ -82,15 +88,18 @@ namespace KoloLos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Article article)
+        public ActionResult Edit(ArticleEdit articleEdit)
         {
             if (ModelState.IsValid)
             {
+                Article article = losRepository.Articles.Find(articleEdit.Id);
+                article.InjectFrom(articleEdit);
                 losRepository.Entry(article).State = EntityState.Modified;
                 losRepository.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(article);
+
+            return View(articleEdit);
         }
 
         //
