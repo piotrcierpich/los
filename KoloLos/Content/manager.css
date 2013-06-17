@@ -55,3 +55,17 @@ p, li
     {
         list-style: inside;
     }
+
+.field-validation-error
+{
+    background: #e68585;
+    border: 1px solid #990808;
+    margin-left: 5px;
+}
+
+[type=datetime]
+{
+    background: #e68585;
+    border: 1px solid #990808;
+    margin-left: 5px;
+}

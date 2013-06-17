@@ -186,6 +186,7 @@
     <Compile Include="Models\ArticleDetail.cs" />
     <Compile Include="Models\ArticleAbstractsList.cs" />
     <Compile Include="Models\Manager\ArticleEdit.cs" />
+    <Compile Include="Models\Manager\ArticleNew.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -259,6 +260,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-pl.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -267,6 +269,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\losScripts.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -307,6 +310,7 @@
     <Content Include="Views\ArticlesManager\Index.cshtml" />
     <Content Include="Views\ArticlesManager\Details.cshtml" />
     <Content Include="Views\ArticlesManager\Edit.cshtml" />
+    <Content Include="Views\ArticlesManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

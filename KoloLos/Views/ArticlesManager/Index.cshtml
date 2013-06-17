@@ -11,15 +11,12 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nowy", "Create")
 </p>
 <table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Author)
         </th>
         <th></th>
     </tr>
@@ -28,14 +25,10 @@
     {
         <tr>
             <td>
-                @Html.ActionLink(item.Title, "Details", new { item.Id })
+                @Html.ActionLink(item.Title, "Edit", new { item.Id })
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Skasuj", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

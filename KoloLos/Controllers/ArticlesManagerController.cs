@@ -56,16 +56,19 @@ namespace KoloLos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Article article)
+        public ActionResult Create(ArticleNew articleNew)
         {
             if (ModelState.IsValid)
             {
+                Article article = new Article();
+                article.InjectFrom(articleNew);
+
                 losRepository.Articles.Add(article);
                 losRepository.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(article);
+            return View(articleNew);
         }
 
         //
