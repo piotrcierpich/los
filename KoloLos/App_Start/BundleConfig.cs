@@ -39,5 +39,40 @@ namespace KoloLos
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
         }
+
+        /*
+         
+         * You could write a custom bundle orderer (IBundleOrderer) that will ensure bundles are included in the order you register them:
+
+public class AsIsBundleOrderer : IBundleOrderer
+{
+    public virtual IEnumerable<FileInfo> OrderFiles(BundleContext context, IEnumerable<FileInfo> files)
+    {
+        return files;
+    }
+}
+and then:
+
+public class BundleConfig
+{
+    public static void RegisterBundles(BundleCollection bundles)
+    {
+        var bundle = new Bundle("~/bundles/scripts/canvas");
+        bundle.Orderer = new AsIsBundleOrderer();
+        bundle
+            .Include("~/Scripts/modernizr-*")
+            .Include("~/Scripts/json2.js")
+            .Include("~/Scripts/columnizer.js")
+            .Include("~/Scripts/jquery.ui.message.min.js")
+            .Include("~/Scripts/Shared/achievements.js")
+            .Include("~/Scripts/Shared/canvas.js");
+        bundles.Add(bundle);
+    }
+}
+and in your view:
+
+@Scripts.Render("~/bundles/scripts/canvas")
+         
+         */
     }
 }
