@@ -46,6 +46,7 @@
             @Html.LabelFor(model => model.PublishDate)
         </div>
         <div class="editor-field">
+            @Html.DisplayFor(model => model.PublishDate)
             @Html.EditorFor(model => model.PublishDate)
             @Html.ValidationMessageFor(model => model.PublishDate)
         </div>
@@ -60,6 +61,6 @@
     @Html.ActionLink("Back to List", "Index")
 </div>
 
-@section scripts {
+@section managerScripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

@@ -24,8 +24,7 @@
 
     <div class="clear"></div>
 </div>
-
-@RenderSection("scripts", required: false)
-
-<script src="~/Scripts/jquery.ui.datepicker-pl.js"></script>
-<script src="~/Scripts/losScripts.js"></script>
+@section scripts
+{
+    @RenderSection("managerScripts", required: false)
+}

@@ -16,6 +16,8 @@ namespace KoloLos.Models.Manager
 
         [Display(Name = "Data publikacji")]
         [Required(ErrorMessage = "Pole 'Data publikacji' jest wymagane")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime PublishDate { get; set; }
 
         [AllowHtml]

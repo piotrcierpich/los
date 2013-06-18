@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="pl-PL" class="static contents">
+<html lang="pl" class="static contents">
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title - My ASP.NET MVC Application</title>
@@ -11,9 +11,12 @@
 </head>
 <body>
 
-                @RenderBody()
+    @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
+
+    @RenderSection("scripts", required: false)
+
 </body>
 </html>
