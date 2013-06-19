@@ -1,0 +1,39 @@
+﻿@model KoloLos.Models.Manager.ArticleEdit
+
+@{
+    ViewBag.Title = "Skasuj";
+    Layout = "~/Views/Shared/ManagerLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Czy chcesz skasować artykuł @Model.Title ?</h3>
+<fieldset>
+    <legend>@Model.Title</legend>
+
+    <div>
+        <h3>@Html.DisplayNameFor(model => model.Content):</h3>
+    </div>
+
+    <div>
+        @Html.DisplayFor(model => model.Content)
+    </div>
+
+    <div>
+        <h3>@Html.DisplayNameFor(model => model.Author):</h3>
+    </div>
+
+    <div>
+        @Html.DisplayFor(model => model.Author)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" />
+        |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

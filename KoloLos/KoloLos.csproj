@@ -303,7 +303,7 @@
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Manager\Create.cshtml" />
-    <Content Include="Views\Manager\Delete.cshtml" />
+    <Content Include="Views\ArticlesManager\Delete.cshtml" />
     <Content Include="Views\Shared\ManagerLayout.cshtml" />
     <Content Include="Views\ArticlesManager\Index.cshtml" />
     <Content Include="Views\ArticlesManager\Details.cshtml" />

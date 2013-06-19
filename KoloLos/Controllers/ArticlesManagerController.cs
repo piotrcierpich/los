@@ -115,7 +115,10 @@ namespace KoloLos.Controllers
             {
                 return HttpNotFound();
             }
-            return View(article);
+
+            ArticleEdit articleEdit = new ArticleEdit();
+            articleEdit.InjectFrom(article);
+            return View(articleEdit);
         }
 
         //
