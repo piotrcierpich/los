@@ -1,6 +1,8 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
+using KoloLos.Models.Manager;
+
 namespace KoloLos
 {
     public class RouteConfig
@@ -23,6 +25,13 @@ namespace KoloLos
                             url: "{listName}/{pageIndex}",
                             defaults: new { controller = "listOfArticles", action = "Index", pageIndex = 0 },
                             constraints: new { listName = @"(^News$)|(^Resolutions$)", pageIndex = @"\b\d+\b" });
+
+
+            routes.MapRoute(name: "manager",
+                            url: "manager/{category}/{action}/{id}",
+                            defaults: new { controller = "ArticlesManager", category = UrlParameter.Optional, action = "Index", id = UrlParameter.Optional },
+                            constraints: new { category = new CategoryConstraint() });
+
 
             routes.MapRoute(name: "Default",
                             url: "{controller}/{action}/{id}",

@@ -1,19 +1,21 @@
-﻿@{
+﻿@using KoloLosCommon
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="~/Content/manager.css" rel="stylesheet" />
 
 <div id="managerHeader">
-    <h1>Koło łowieckie "Łoś" w Tarnowie</h1>
+    <h1><a href="~/">Koło łowieckie "Łoś" w Tarnowie</a></h1>
 </div>
 
 <div id="content">
     <div id="sidebar">
         <ul>
-            <li>@Html.ActionLink("Artykuły", "Index", "ArticlesManager")</li>
-            <li>Sidebar stuff.</li>
-            <li>Sidebar stuff.</li>
-            <li>Sidebar stuff.</li>
+            <li>@Html.RouteLink("Strona główna", "manager", new { category = Category.Main })</li>
+            <li>@Html.RouteLink("Aktualności", "manager", new { category = Category.News })</li>
+            <li>@Html.RouteLink("Uchwały", "manager", new { category = Category.Resolutions })</li>
+            <li>@Html.RouteLink("Historia", "manager", new { category = Category.History })</li>
+            <li>@Html.RouteLink("Kontakt", "manager", new { category = Category.Contact })</li>
         </ul>
     </div>
 

@@ -185,9 +185,11 @@
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
     <Compile Include="Models\ArticleAbstractsList.cs" />
+    <Compile Include="Models\Manager\ArticleCategories.cs" />
     <Compile Include="Models\Manager\ArticleEdit.cs" />
     <Compile Include="Models\Manager\ArticleNew.cs" />
     <Compile Include="Models\Manager\ArticleTitle.cs" />
+    <Compile Include="Models\Manager\CategoryConstraint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -309,6 +311,7 @@
     <Content Include="Views\ArticlesManager\Details.cshtml" />
     <Content Include="Views\ArticlesManager\Edit.cshtml" />
     <Content Include="Views\ArticlesManager\Create.cshtml" />
+    <Content Include="Views\ArticlesManager\Empty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
