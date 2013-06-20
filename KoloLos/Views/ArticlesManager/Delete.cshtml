@@ -5,9 +5,7 @@
     Layout = "~/Views/Shared/ManagerLayout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Czy chcesz skasować artykuł @Model.Title ?</h3>
+<h3>Czy chcesz skasować ten artykuł?</h3>
 <fieldset>
     <legend>@Model.Title</legend>
 
@@ -32,8 +30,8 @@
 {
     @Html.AntiForgeryToken()
     <p>
-        <input type="submit" value="Delete" />
+        <input type="submit" value="Skasuj" />
         |
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Powrót do listy", "Index")
     </p>
 }

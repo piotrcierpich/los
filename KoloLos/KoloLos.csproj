@@ -187,6 +187,7 @@
     <Compile Include="Models\ArticleAbstractsList.cs" />
     <Compile Include="Models\Manager\ArticleEdit.cs" />
     <Compile Include="Models\Manager\ArticleNew.cs" />
+    <Compile Include="Models\Manager\ArticleTitle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -302,7 +303,6 @@
     <Content Include="Views\ListOfArticles\Index.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
-    <Content Include="Views\Manager\Create.cshtml" />
     <Content Include="Views\ArticlesManager\Delete.cshtml" />
     <Content Include="Views\Shared\ManagerLayout.cshtml" />
     <Content Include="Views\ArticlesManager\Index.cshtml" />

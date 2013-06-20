@@ -5,13 +5,11 @@
     Layout = "~/Views/Shared/ManagerLayout.cshtml";
 }
 
-<h2>Create</h2>
-
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     
     <fieldset>
-        <legend>Artykuł</legend>
+        <legend>Nowy artykuł</legend>
         
         <div>
             @Html.LabelFor(model => model.Title)

@@ -63,9 +63,24 @@ p, li
     margin-left: 5px;
 }
 
-[type=datetime]
+table
 {
-    background: #e68585;
-    border: 1px solid #990808;
-    margin-left: 5px;
+    width: 90%;
+}
+
+tr
+{
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+fieldset
+{
+    clear: none;
+}
+
+textarea
+{
+    width: 90%;
 }

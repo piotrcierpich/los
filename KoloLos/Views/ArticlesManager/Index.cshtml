@@ -2,16 +2,14 @@
     Layout = "~/Views/Shared/ManagerLayout.cshtml";
 }
 
-@model IEnumerable<KoloLosCommon.Article>
+@model IEnumerable<KoloLos.Models.Manager.ArticleTitle>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Aktualności";
 }
 
-<h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Nowy", "Create")
+    @Html.ActionLink("Nowy artykuł", "Create")
 </p>
 <table>
     <tr>

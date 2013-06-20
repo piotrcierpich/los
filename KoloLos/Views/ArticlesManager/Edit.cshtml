@@ -1,11 +1,9 @@
 ﻿@model KoloLos.Models.Manager.ArticleEdit
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edycja";
     Layout = "~/Views/Shared/ManagerLayout.cshtml";
 }
-
-<h2>Edit</h2>
 
 @using (Html.BeginForm())
 {
@@ -13,7 +11,7 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Article</legend>
+        <legend>Artykuł</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Title)
@@ -51,13 +49,13 @@
         </div>
 
         <p>
-            <input type="submit" value="Save" />
+            <input type="submit" value="Zapisz" />
         </p>
     </fieldset>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Powrót do listy", "Index")
 </div>
 
 @section managerScripts {

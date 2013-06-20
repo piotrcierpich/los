@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 using KoloLos.Models.Manager;
@@ -21,39 +19,25 @@ namespace KoloLos.Controllers
         {
             this.losRepository = losRepository;
         }
-
-        //
-        // GET: /Manager/
-
+        
         public ActionResult Index()
         {
-            return View(losRepository.Articles.ToList());
+            IEnumerable<ArticleTitle> articleTitles = losRepository.Articles
+                                                                   .ToArray()
+                                                                   .Select(a =>
+                                                                            {
+                                                                                ArticleTitle articleTitle = new ArticleTitle();
+                                                                                articleTitle.InjectFrom(a);
+                                                                                return articleTitle;
+                                                                            });
+            return View(articleTitles); 
         }
-
-        //
-        // GET: /Manager/Details/5
-
-        public ActionResult Details(int id = 0)
-        {
-            Article article = losRepository.Articles.Find(id);
-            if (article == null)
-            {
-                return HttpNotFound();
-            }
-            return View(article);
-        }
-
-        //
-        // GET: /Manager/Create
-
+        
         public ActionResult Create()
         {
             return View();
         }
-
-        //
-        // POST: /Manager/Create
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(ArticleNew articleNew)
@@ -70,10 +54,7 @@ namespace KoloLos.Controllers
 
             return View(articleNew);
         }
-
-        //
-        // GET: /Manager/Edit/5
-
+        
         public ActionResult Edit(int id = 0)
         {
             Article article = losRepository.Articles.Find(id);
@@ -85,10 +66,7 @@ namespace KoloLos.Controllers
             articleEdit.InjectFrom(article);
             return View(articleEdit);
         }
-
-        //
-        // POST: /Manager/Edit/5
-
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(ArticleEdit articleEdit)
@@ -104,10 +82,7 @@ namespace KoloLos.Controllers
 
             return View(articleEdit);
         }
-
-        //
-        // GET: /Manager/Delete/5
-
+        
         public ActionResult Delete(int id = 0)
         {
             Article article = losRepository.Articles.Find(id);
@@ -120,10 +95,7 @@ namespace KoloLos.Controllers
             articleEdit.InjectFrom(article);
             return View(articleEdit);
         }
-
-        //
-        // POST: /Manager/Delete/5
-
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
