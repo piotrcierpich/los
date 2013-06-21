@@ -172,6 +172,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\gallery\lightbox.css" />
     <Content Include="Content\pics\IMG_5036.JPG" />
     <Content Include="Content\pics\logow.png" />
     <Content Include="Content\pics\losbaner.jpg" />
@@ -256,6 +258,22 @@
     <Content Include="Global.asax" />
     <Content Include="Content\manager.css" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\Gallery\close.png" />
+    <Content Include="Images\Gallery\loading.gif" />
+    <Content Include="Images\Gallery\next.png" />
+    <Content Include="Images\Gallery\prev.png" />
+    <Content Include="Images\Gallery\Sample\image-1.jpg" />
+    <Content Include="Images\Gallery\Sample\image-2.jpg" />
+    <Content Include="Images\Gallery\Sample\image-3.jpg" />
+    <Content Include="Images\Gallery\Sample\image-4.jpg" />
+    <Content Include="Images\Gallery\Sample\image-5.jpg" />
+    <Content Include="Images\Gallery\Sample\image-6.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-1.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-2.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-3.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-4.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-5.jpg" />
+    <Content Include="Images\Gallery\Sample\thumb-6.jpg" />
     <Content Include="Images\manager-content-bg.png" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -270,6 +288,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\lightbox.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -310,6 +329,7 @@
     <Content Include="Views\Manager\Edit.cshtml" />
     <Content Include="Views\Manager\Create.cshtml" />
     <Content Include="Views\Manager\Empty.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
