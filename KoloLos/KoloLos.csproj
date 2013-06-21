@@ -172,7 +172,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
-    <Compile Include="Controllers\ArticlesManagerController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
@@ -304,18 +303,18 @@
     <Content Include="Views\Shared\SingleColumnLayout.cshtml" />
     <Content Include="Views\ListOfArticles\Index.cshtml" />
     <Content Include="Views\Article\Index.cshtml" />
-    <Content Include="Views\Manager\Index.cshtml" />
-    <Content Include="Views\ArticlesManager\Delete.cshtml" />
+    <Content Include="Views\Manager\Delete.cshtml" />
     <Content Include="Views\Shared\ManagerLayout.cshtml" />
-    <Content Include="Views\ArticlesManager\Index.cshtml" />
-    <Content Include="Views\ArticlesManager\Details.cshtml" />
-    <Content Include="Views\ArticlesManager\Edit.cshtml" />
-    <Content Include="Views\ArticlesManager\Create.cshtml" />
-    <Content Include="Views\ArticlesManager\Empty.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Manager\Details.cshtml" />
+    <Content Include="Views\Manager\Edit.cshtml" />
+    <Content Include="Views\Manager\Create.cshtml" />
+    <Content Include="Views\Manager\Empty.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
+    <Folder Include="Views\ArticlesManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

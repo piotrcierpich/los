@@ -2,9 +2,33 @@
     Layout = "~/Views/Shared/ManagerLayout.cshtml";
 }
 
-@model dynamic
+@model IEnumerable<KoloLos.Models.Manager.ArticleTitle>
 
 @{
-    ViewBag.Title = "Zarządzanie stroną";
+    ViewBag.Title = "Aktualności";
 }
 
+<p>
+    @Html.ActionLink("Nowy artykuł", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Title, "Edit", new { item.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Skasuj", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

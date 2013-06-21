@@ -13,7 +13,7 @@ namespace KoloLos.Models.Manager
                 if (values.ContainsKey("category"))
                 {
                     string category = values["category"].ToString();
-                    return ArticleCategories.IsValidCategory(category);
+                    return string.IsNullOrEmpty(category) || ArticleCategories.IsValidCategory(category);
                 }
             }
             return true;
