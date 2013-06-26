@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KoloLos.Models;
 using KoloLos.Models.Gallery;
 
 using KoloLosCommon;
@@ -22,25 +23,34 @@ namespace KoloLos.Controllers
             this.galleries = galleries;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int pageIndex = 0)
         {
-            GalleryLink[] galleryLinks = galleries.ToArray().Select(g =>
-                                                             {
-                                                                 GalleryLink galleryLink = new GalleryLink();
-                                                                 galleryLink.InjectFrom(g);
-                                                                 return galleryLink;
-                                                             }).ToArray();
+            GalleryLink[] galleryLinks = GetGalleryLinks(pageIndex);
+
             Galleries galleriesModel = new Galleries
                                       {
                                           Category = Category.Gallery,
                                           Gallery = galleryLinks,
-                                          NextPageExists = true,
-                                          NextPageIndex = 1,
-                                          PreviousPageExists = true,
-                                          PreviousPageIndex = 0
+                                          NextPreviousOptions = NextPreviousOptions.ForPageIndex(pageIndex,galleries.Count())
                                       };
             
             return View(galleriesModel);
+        }
+
+        private GalleryLink[] GetGalleryLinks(int pageIndex)
+        {
+            IEnumerable<Gallery> latestGalleries = GetLatest(pageIndex * NextPreviousOptions.EntriesPerPageMaxCount, NextPreviousOptions.EntriesPerPageMaxCount);
+            return latestGalleries.Select(g =>
+                                            {
+                                                GalleryLink galleryLink = new GalleryLink();
+                                                galleryLink.InjectFrom(g);
+                                                return galleryLink;
+                                            }).ToArray();
+        }
+
+        private IEnumerable<Gallery> GetLatest(int skip, int count)
+        {
+            return galleries.OrderByDescending(g => g.PublishDate).Skip(skip).Take(count);
         }
 
         public ActionResult Details(int id)

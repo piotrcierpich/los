@@ -79,8 +79,16 @@ namespace KoloLosDataLayer
                 context.Articles.Add(resolution);
             }
 
-            Gallery gallery = new Gallery { Path = "Sample1", Title = "Sample gallery 1" };
-            context.Galleries.Add(gallery);
+            for (int i = 0; i < 22; i++)
+            {
+                Gallery gallery = new Gallery
+                                      {
+                                              Path = "Sample1", 
+                                              Title = "Sample gallery " + i,
+                                              PublishDate = baseDateTime.AddDays(i)
+                                      };
+                context.Galleries.Add(gallery);
+            }
 
             context.SaveChanges();
         }

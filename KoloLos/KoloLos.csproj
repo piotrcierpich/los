@@ -197,6 +197,7 @@
     <Compile Include="Models\Manager\ArticleNew.cs" />
     <Compile Include="Models\Manager\ArticleTitle.cs" />
     <Compile Include="Models\Manager\CategoryConstraint.cs" />
+    <Compile Include="Models\NextPreviousOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -344,6 +345,7 @@
     <Content Include="Views\Manager\Empty.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\Details.cshtml" />
+    <Content Include="Views\Shared\PaginableListLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

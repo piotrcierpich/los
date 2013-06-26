@@ -13,8 +13,6 @@ namespace KoloLos.Controllers
 {
     public class ListOfArticlesController : Controller
     {
-        private const int AbstractsPerPageMaxCount = 10;
-
         private readonly IDbSet<Article> articles;
 
         public ListOfArticlesController(IDbSet<Article> articles)
@@ -27,24 +25,16 @@ namespace KoloLos.Controllers
             ArticleAbstractsList articleAbstracts = new ArticleAbstractsList
             {
                 Category = listName,
-                NextPageExists = AnyCategoryArticlesOnNextPage(pageIndex + 1),
-                PreviousPageExists = pageIndex > 0,
-                PreviousPageIndex = pageIndex - 1,
-                NextPageIndex = pageIndex + 1,
+                NextPreviousOptions = NextPreviousOptions.ForPageIndex(pageIndex, articles.Count(article => article.Category == Category.News)),
                 ArticleAbstracts = GetAbstractsForPageIndex(listName, pageIndex)
             };
 
             return View(articleAbstracts);
         }
 
-        private bool AnyCategoryArticlesOnNextPage(int nextPageIndex)
-        {
-            return nextPageIndex * AbstractsPerPageMaxCount < articles.Count(article => article.Category == Category.News);
-        }
-
         private ArticleAbstract[] GetAbstractsForPageIndex(Category listName, int pageIndex)
         {
-            IEnumerable<Article> articlesCurrentPage = GetLatest(listName, pageIndex * AbstractsPerPageMaxCount, AbstractsPerPageMaxCount);
+            IEnumerable<Article> articlesCurrentPage = GetLatest(listName, pageIndex * NextPreviousOptions.EntriesPerPageMaxCount, NextPreviousOptions.EntriesPerPageMaxCount);
             return articlesCurrentPage.Select(article =>
                                                         {
                                                             ArticleAbstract articleAbstract = new ArticleAbstract();

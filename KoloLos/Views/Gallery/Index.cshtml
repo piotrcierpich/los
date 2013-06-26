@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "title";
-    Layout = "../Shared/SingleColumnLayout.cshtml";
+    Layout = "../Shared/PaginableListLayout.cshtml";
 }
 
 @section articleTitle
@@ -24,21 +24,6 @@ Galeria
                     @Html.ActionLink(gallery.Title, "Details", new { gallery.Id })
                 </h1>
             </article>
-        </li>
-    }
-</ul>
-
-<ul class="pager group">
-    @if (Model.PreviousPageExists)
-    {
-        <li>
-            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = Model.PreviousPageIndex }, null)
-        </li>
-    }
-    @if (Model.NextPageExists)
-    {
-        <li>
-            @Html.ActionLink("Następne", "Index", new { pageIndex = Model.NextPageIndex }, null)
         </li>
     }
 </ul>

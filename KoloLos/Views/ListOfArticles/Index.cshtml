@@ -2,7 +2,7 @@
 @model KoloLos.Models.ArticleAbstractsList
 
 @{
-    Layout = "~/Views/Shared/SingleColumnLayout.cshtml";
+    Layout = "~/Views/Shared/PaginableListLayout.cshtml";
     ViewBag.Title = "title";
 }
 
@@ -18,7 +18,7 @@
     }
 }
 
-<ul class="blog-posts content-items">
+<ul class="content-items">
     @for (int i = 0; i < Model.ArticleAbstracts.Length; i++)
     {
 
@@ -45,19 +45,3 @@
         </li>
     }
 </ul>
-
-<ul class="pager group">
-    @if (Model.PreviousPageExists)
-    {
-        <li>
-            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = Model.PreviousPageIndex }, null)
-        </li>
-    }
-    @if (Model.NextPageExists)
-    {
-        <li>
-            @Html.ActionLink("Następne", "Index", new { pageIndex = Model.NextPageIndex }, null)
-        </li>
-    }
-</ul>
-

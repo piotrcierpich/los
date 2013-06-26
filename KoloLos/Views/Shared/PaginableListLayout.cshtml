@@ -1,0 +1,29 @@
+﻿
+@model KoloLos.Models.ListableModel
+
+@{
+    ViewBag.Title = "PaginableListLayout";
+    Layout = "~/Views/Shared/SingleColumnLayout.cshtml";
+}
+
+@section articleTitle
+{
+    @RenderSection("articleTitle")
+}
+
+@RenderBody()
+
+<ul class="pager group">
+    @if (Model.NextPreviousOptions.PreviousPageExists)
+    {
+        <li>
+            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = Model.NextPreviousOptions.PreviousPageIndex }, null)
+        </li>
+    }
+    @if (Model.NextPreviousOptions.NextPageExists)
+    {
+        <li>
+            @Html.ActionLink("Następne", "Index", new { pageIndex = Model.NextPreviousOptions.NextPageIndex }, null)
+        </li>
+    }
+</ul>
