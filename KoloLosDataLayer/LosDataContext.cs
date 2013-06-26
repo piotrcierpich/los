@@ -4,17 +4,18 @@ using KoloLosCommon;
 
 namespace KoloLosDataLayer
 {
-    public class LosDataContext : DbContext, ILosRepository
+    public class ArticlesDataContext : DbContext, IArticlesRepository, IGalleriesRepository
     {
-        public LosDataContext()
+        public ArticlesDataContext()
             : base("KoloLos")
         { }
 
-        static LosDataContext()
+        static ArticlesDataContext()
         {
             Database.SetInitializer(new LosDataInitializer());
         }
 
         public DbSet<Article> Articles { get; set; }
+        public DbSet<Gallery> Galleries { get; set; }
     }
 }

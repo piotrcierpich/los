@@ -22,8 +22,9 @@ namespace KoloLos
         {
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
-            builder.RegisterType<LosDataContext>().AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
-            builder.Register(c => c.Resolve<LosDataContext>().Articles).As<IDbSet<Article>>().InstancePerLifetimeScope();
+            builder.RegisterType<ArticlesDataContext>().AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
+            builder.Register(c => c.Resolve<ArticlesDataContext>().Articles).As<IDbSet<Article>>().InstancePerLifetimeScope();
+            builder.Register(c => c.Resolve<ArticlesDataContext>().Galleries).As<IDbSet<Gallery>>().InstancePerLifetimeScope();
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 

@@ -1,0 +1,23 @@
+﻿@model KoloLos.Models.Gallery.Images
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/SingleColumnLayout.cshtml";
+}
+
+@section articleTitle
+{
+    @Model.Title
+}
+
+@foreach (var image in Model.GalleryImages)
+{
+    <a href="@image.Path" rel="lightbox[a]" title="">
+        <img src="@image.ThumbnailPath" alt="alternatives" />
+    </a>    
+}
+
+<script src="~/Scripts/jquery-1.8.2.min.js"></script>
+<script src="~/Scripts/lightbox.js"></script>
+
+<link href="~/Content/lightbox.css" rel="stylesheet" />

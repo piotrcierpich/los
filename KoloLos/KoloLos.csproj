@@ -173,6 +173,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\GalleryManagerController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
@@ -182,6 +183,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
+    <Compile Include="Models\Gallery\Galleries.cs" />
+    <Compile Include="Models\Gallery\GalleryImage.cs" />
+    <Compile Include="Models\Gallery\GalleryLink.cs" />
+    <Compile Include="Models\Gallery\Images.cs" />
+    <Compile Include="Models\Gallery\ImagesLocationResolver.cs" />
+    <Compile Include="Models\ListableModel.cs" />
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
     <Compile Include="Models\ArticleAbstractsList.cs" />
@@ -193,7 +200,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\gallery\lightbox.css" />
+    <Content Include="Content\gallery\Sample1\image-1.jpg" />
+    <Content Include="Content\gallery\Sample1\image-2.jpg" />
+    <Content Include="Content\gallery\Sample1\image-3.jpg" />
+    <Content Include="Content\gallery\Sample1\thumbnails\thumb-image-1.jpg" />
+    <Content Include="Content\gallery\Sample1\thumbnails\thumb-image-2.jpg" />
+    <Content Include="Content\gallery\Sample1\thumbnails\thumb-image-3.jpg" />
+    <Content Include="Content\lightbox.css" />
     <Content Include="Content\pics\IMG_5036.JPG" />
     <Content Include="Content\pics\logow.png" />
     <Content Include="Content\pics\losbaner.jpg" />
@@ -330,11 +343,11 @@
     <Content Include="Views\Manager\Create.cshtml" />
     <Content Include="Views\Manager\Empty.cshtml" />
     <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\Gallery\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Filters\" />
-    <Folder Include="Views\ArticlesManager\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -369,7 +382,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>25189</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:54848/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

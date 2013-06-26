@@ -45,7 +45,10 @@
   <ItemGroup>
     <Compile Include="Article.cs" />
     <Compile Include="Category.cs" />
-    <Compile Include="ILosRepository.cs" />
+    <Compile Include="Gallery.cs" />
+    <Compile Include="IGalleriesRepository.cs" />
+    <Compile Include="IArticlesRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,11 +13,11 @@ namespace KoloLos.Controllers
 {
     public class ManagerController : Controller
     {
-        private readonly ILosRepository losRepository;
+        private readonly IArticlesRepository articlesRepository;
 
-        public ManagerController(ILosRepository losRepository)
+        public ManagerController(IArticlesRepository articlesRepository)
         {
-            this.losRepository = losRepository;
+            this.articlesRepository = articlesRepository;
         }
 
         public ActionResult Index(Category? category = null)
@@ -26,7 +26,7 @@ namespace KoloLos.Controllers
                 return View("Empty");
 
 
-            IEnumerable<ArticleTitle> articleTitles = losRepository.Articles
+            IEnumerable<ArticleTitle> articleTitles = articlesRepository.Articles
                                                                    .Where(a => a.Category == category)
                                                                    .ToArray()
                                                                    .Select(a =>
@@ -52,8 +52,8 @@ namespace KoloLos.Controllers
                 Article article = new Article();
                 article.InjectFrom(articleNew);
 
-                losRepository.Articles.Add(article);
-                losRepository.SaveChanges();
+                articlesRepository.Articles.Add(article);
+                articlesRepository.SaveChanges();
                 return RedirectToAction("Index", new { category });
             }
 
@@ -62,7 +62,7 @@ namespace KoloLos.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Article article = losRepository.Articles.Find(id);
+            Article article = articlesRepository.Articles.Find(id);
             if (article == null)
             {
                 return HttpNotFound();
@@ -78,10 +78,10 @@ namespace KoloLos.Controllers
         {
             if (ModelState.IsValid)
             {
-                Article article = losRepository.Articles.Find(articleEdit.Id);
+                Article article = articlesRepository.Articles.Find(articleEdit.Id);
                 article.InjectFrom(articleEdit);
-                losRepository.Entry(article).State = EntityState.Modified;
-                losRepository.SaveChanges();
+                articlesRepository.Entry(article).State = EntityState.Modified;
+                articlesRepository.SaveChanges();
                 return RedirectToAction("Index", new { category });
             }
 
@@ -90,7 +90,7 @@ namespace KoloLos.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Article article = losRepository.Articles.Find(id);
+            Article article = articlesRepository.Articles.Find(id);
             if (article == null)
             {
                 return HttpNotFound();
@@ -105,15 +105,15 @@ namespace KoloLos.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Category category, int id)
         {
-            Article article = losRepository.Articles.Find(id);
-            losRepository.Articles.Remove(article);
-            losRepository.SaveChanges();
+            Article article = articlesRepository.Articles.Find(id);
+            articlesRepository.Articles.Remove(article);
+            articlesRepository.SaveChanges();
             return RedirectToAction("Index", new { category });
         }
 
         protected override void Dispose(bool disposing)
         {
-            losRepository.Dispose();
+            articlesRepository.Dispose();
             base.Dispose(disposing);
         }
     }

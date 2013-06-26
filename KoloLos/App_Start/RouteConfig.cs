@@ -11,6 +11,10 @@ namespace KoloLos
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(name: "galleries",
+                            url: "gallery/{action}/{id}",
+                            defaults: new {controller = "gallery", action = "index", id = UrlParameter.Optional});
+
             routes.MapRoute(name: "articleById",
                             url: "{id}",
                             defaults: new { controller = "Article", action = "ById" },

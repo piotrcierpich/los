@@ -1,18 +1,45 @@
-﻿@model dynamic
+﻿@using KoloLos.Models.Gallery
+@model Galleries
 
 @{
     ViewBag.Title = "title";
+    Layout = "../Shared/SingleColumnLayout.cshtml";
 }
 
-<h2>title</h2>
-<script src="~/Scripts/jquery-1.8.2.min.js"></script>
-<script src="~/Scripts/lightbox.js"></script>
+@section articleTitle
+{
+Galeria
+}
 
-<link href="~/Content/gallery/lightbox.css" rel="stylesheet" />
+<ul class="content-items">
+    @for (int i = 0; i < Model.Gallery.Length; i++)
+    {
 
-<a href="~/Images/Gallery/Sample/image-1.jpg" rel="lightbox[a]" title="my caption">
-    <img src="~/Images/Gallery/Sample/thumb-1.jpg" alt="alternatives"/>
-</a>
-<a href="~/Images/Gallery/Sample/image-2.jpg" rel="lightbox[a]" title="my caption 2">
-    <img src="~/Images/Gallery/Sample/thumb-2.jpg" alt="alternatives"/>
-</a>
+        string itemClass = i == 0 ? "first" : string.Empty;
+        GalleryLink gallery = Model.Gallery[i];
+                                    
+        <li class="@itemClass">
+            <article class="content-item">
+                <h1>
+                    @Html.ActionLink(gallery.Title, "Details", new { gallery.Id })
+                </h1>
+            </article>
+        </li>
+    }
+</ul>
+
+<ul class="pager group">
+    @if (Model.PreviousPageExists)
+    {
+        <li>
+            @Html.ActionLink("Poprzednie", "Index", new { pageIndex = Model.PreviousPageIndex }, null)
+        </li>
+    }
+    @if (Model.NextPageExists)
+    {
+        <li>
+            @Html.ActionLink("Następne", "Index", new { pageIndex = Model.NextPageIndex }, null)
+        </li>
+    }
+</ul>
+

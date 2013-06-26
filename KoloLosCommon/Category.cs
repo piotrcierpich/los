@@ -6,6 +6,7 @@
         News, 
         History, 
         Resolutions,
-        Contact
+        Contact,
+        Gallery
     }
 }

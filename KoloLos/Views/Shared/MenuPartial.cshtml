@@ -1,7 +1,7 @@
 ﻿<div id="layout-navigation" class="group">
     <div class="zone zone-navigation">
         <nav>
-            <ul class="menu menu-main">
+            <ul>
                 <li>
                     <a href="/">Strona główna</a>
                 </li>
@@ -15,7 +15,7 @@
                     @Html.RouteLink("Historia koła", "articleByCategory", new { category = "History" })
                 </li>
                 <li>
-                    <a href="/Containers/Item/Display/20">Galeria</a>
+                    @Html.ActionLink("Galeria", "Index", "Gallery")
                 </li>
                 <li>
                     @Html.RouteLink("Kontakt", "articleByCategory", new { category = "Contact" })
