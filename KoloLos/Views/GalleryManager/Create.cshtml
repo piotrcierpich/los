@@ -1,0 +1,43 @@
+﻿@model KoloLos.Models.GalleryManager.GalleryNew
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Nowa galeria</legend>
+
+        <div>
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        <div>
+            @Html.LabelFor(model => model.PublishDate)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.PublishDate)
+            @Html.ValidationMessageFor(model => model.PublishDate)
+        </div>
+
+        <p>
+            <input type="submit" value="Utwórz galerię" />
+        </p>
+    </fieldset>
+}
+
+
+<div>
+    @Html.ActionLink("Powrót do listy", "Index")
+</div>
+
+@section managerScripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

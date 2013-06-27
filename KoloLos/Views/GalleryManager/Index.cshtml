@@ -1,0 +1,30 @@
+﻿@model IEnumerable<KoloLos.Models.Gallery.GalleryLink>
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+<p>
+    @Html.ActionLink("Nowa galeria", "Create")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var galleryLink in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(galleryLink.Title, "Edit", new { galleryLink.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Skasuj", "Delete", new { galleryLink.Id })
+            </td>
+        </tr>
+    }
+</table>

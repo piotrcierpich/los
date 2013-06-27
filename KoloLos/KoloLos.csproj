@@ -177,17 +177,18 @@
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
-    <Compile Include="Controllers\SampleController.cs" />
     <Compile Include="GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
+    <Compile Include="Models\GalleryManager\GalleryFolder.cs" />
+    <Compile Include="Models\GalleryManager\GalleryNew.cs" />
     <Compile Include="Models\Gallery\Galleries.cs" />
     <Compile Include="Models\Gallery\GalleryImage.cs" />
     <Compile Include="Models\Gallery\GalleryLink.cs" />
     <Compile Include="Models\Gallery\Images.cs" />
-    <Compile Include="Models\Gallery\ImagesLocationResolver.cs" />
+    <Compile Include="Models\Gallery\ImagesLocation.cs" />
     <Compile Include="Models\ListableModel.cs" />
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
@@ -346,6 +347,8 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\Gallery\Details.cshtml" />
     <Content Include="Views\Shared\PaginableListLayout.cshtml" />
+    <Content Include="Views\GalleryManager\Index.cshtml" />
+    <Content Include="Views\GalleryManager\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

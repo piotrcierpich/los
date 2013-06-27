@@ -13,7 +13,7 @@ namespace KoloLos
 
             routes.MapRoute(name: "galleries",
                             url: "gallery/{action}/{id}",
-                            defaults: new {controller = "gallery", action = "index", id = UrlParameter.Optional});
+                            defaults: new { controller = "gallery", action = "index", id = UrlParameter.Optional });
 
             routes.MapRoute(name: "articleById",
                             url: "{id}",
@@ -30,12 +30,14 @@ namespace KoloLos
                             defaults: new { controller = "listOfArticles", action = "Index", pageIndex = 0 },
                             constraints: new { listName = @"(^News$)|(^Resolutions$)", pageIndex = @"\b\d+\b" });
 
+            routes.MapRoute(name: "galleryManager",
+                            url: "manager/gallery/{action}/{id}",
+                            defaults: new { controller = "gallerymanager", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(name: "manager",
                             url: "manager/{category}/{action}/{id}",
                             defaults: new { controller = "manager", category = UrlParameter.Optional, action = "Index", id = UrlParameter.Optional },
                             constraints: new { category = new CategoryConstraint() });
-
 
             routes.MapRoute(name: "Default",
                             url: "{controller}/{action}/{id}",
