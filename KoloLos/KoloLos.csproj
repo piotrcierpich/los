@@ -173,6 +173,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Models\GalleryManager\ImageRemover.cs" />
+    <Compile Include="Models\GalleryManager\GalleryImageDetails.cs" />
     <Compile Include="Controllers\GalleryManagerController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
     <Compile Include="Controllers\MainController.cs" />
@@ -182,13 +184,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
+    <Compile Include="Models\GalleryManager\GalleryEdit.cs" />
     <Compile Include="Models\GalleryManager\GalleryFolder.cs" />
     <Compile Include="Models\GalleryManager\GalleryNew.cs" />
     <Compile Include="Models\Gallery\Galleries.cs" />
     <Compile Include="Models\Gallery\GalleryImage.cs" />
     <Compile Include="Models\Gallery\GalleryLink.cs" />
     <Compile Include="Models\Gallery\Images.cs" />
-    <Compile Include="Models\Gallery\ImagesLocation.cs" />
+    <Compile Include="Models\Gallery\ImagesBrowser.cs" />
     <Compile Include="Models\ListableModel.cs" />
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
@@ -349,6 +352,8 @@
     <Content Include="Views\Shared\PaginableListLayout.cshtml" />
     <Content Include="Views\GalleryManager\Index.cshtml" />
     <Content Include="Views\GalleryManager\Create.cshtml" />
+    <Content Include="Views\GalleryManager\Edit.cshtml" />
+    <Content Include="Views\GalleryManager\ImageDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

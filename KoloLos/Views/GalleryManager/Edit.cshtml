@@ -1,0 +1,27 @@
+﻿@model KoloLos.Models.GalleryManager.GalleryEdit
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+<div>
+    <table>
+        <tr>
+            <th>@Html.DisplayNameFor(g => g.FileNames)</th>
+            <th></th>
+        </tr>
+        @foreach (string fileName in Model.FileNames)
+        {
+            <tr>
+                <td>@Html.ActionLink(fileName, "ImageDetails", new { Model.Id, fileName })</td>
+                <td>@Html.ActionLink("Skasuj", "DeleteImage", new { Model.Id, fileName })</td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <br/>
+    @Html.ActionLink("Powrót do list galerii", "Index")
+</div>

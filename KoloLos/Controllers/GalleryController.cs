@@ -56,7 +56,7 @@ namespace KoloLos.Controllers
         public ActionResult Details(int id)
         {
             Gallery gallery = galleries.Find(id);
-            ImagesLocation imagesLocation = new ImagesLocation(gallery.Path);
+            ImagesBrowser imagesLocation = new ImagesBrowser(gallery.Path);
             Images images = new Images { Title = gallery.Title, GalleryImages = imagesLocation.GetImages() };
             return View(images);
         }

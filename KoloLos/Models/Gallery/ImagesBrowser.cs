@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace KoloLos.Models.Gallery
 {
-    public class ImagesLocation
+    public class ImagesBrowser
     {
         private const string ImagesDirectoryPattern = "/Content/gallery/{0}/";
         private const string ThumbnailsDirectoryPattern = "/Content/gallery/{0}/thumbnails/";
@@ -13,7 +13,7 @@ namespace KoloLos.Models.Gallery
         private readonly string imagesDirectory;
         private readonly string thumbnailsDirectory;
 
-        public ImagesLocation(string imagesDirectoryName)
+        public ImagesBrowser(string imagesDirectoryName)
         {
             imagesUri = string.Format(ImagesDirectoryPattern, imagesDirectoryName);
             thumbnailsUri = string.Format(ThumbnailsDirectoryPattern, imagesDirectoryName);
@@ -24,7 +24,7 @@ namespace KoloLos.Models.Gallery
 
         public GalleryImage[] GetImages()
         {
-            string[] files = new DirectoryInfo(imagesDirectory).GetFiles().Select(f => f.Name).ToArray();
+            string[] files = GetImagesFileNames();
 
             return files.Where(ThumbnailExists).Select(f => new GalleryImage
                                              {
@@ -32,6 +32,16 @@ namespace KoloLos.Models.Gallery
                                                  ThumbnailPath = thumbnailsUri + ImageToThumbnailName(f)
                                              })
                         .ToArray();
+        }
+
+        public string[] GetImagesFileNames()
+        {
+            return new DirectoryInfo(imagesDirectory).GetFiles().Select(f => f.Name).ToArray();
+        }
+
+        public string GetImagePath(string fileName)
+        {
+            return imagesUri + fileName;
         }
 
         private bool ThumbnailExists(string file)

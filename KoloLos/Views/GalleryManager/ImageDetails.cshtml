@@ -1,0 +1,24 @@
+﻿@model KoloLos.Models.GalleryManager.GalleryImageDetails
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+
+<div>
+    <img src="@Model.PathToImage"/>
+</div>
+<p>
+    @Html.DisplayTextFor(m => m.FileName)
+</p>
+<p>
+    @Html.ActionLink("Powrót do listy", "Edit", new { Model.Id })
+    |
+    @using (Html.BeginForm("DeleteImage", "GalleryManager", new { Model.Id, Model.FileName }))
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Skasuj" />
+    }
+</p>
+
