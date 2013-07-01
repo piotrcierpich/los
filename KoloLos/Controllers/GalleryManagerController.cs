@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 using KoloLos.Models.Gallery;
@@ -87,6 +88,27 @@ namespace KoloLos.Controllers
                                                               FileName = filename
                                                           };
             return View(galleryImageDetails);
+        }
+
+        public ActionResult AddImage(int id)
+        {
+            return View(id);
+        }
+
+        [HttpPost]
+        public ActionResult AddImage(int id, HttpPostedFileBase file)
+        {
+            if (file != null && file.ContentLength > 0)
+            {
+                // add thumbnail generation - probably a separate class, after
+                // refactoring from galleryfolder/imagesbrowser add new class for creating a file in relevant gallery
+                Gallery gallery = galleriesRepository.Galleries.Find(id);
+                GalleryFolder galleryFolder = new GalleryFolder(gallery.Path);
+                string pathOfImage = galleryFolder.GetPathForImageFile(file.FileName);
+                file.SaveAs(pathOfImage);
+            }
+
+            return RedirectToAction("Edit", new { id });
         }
 
         [HttpPost]

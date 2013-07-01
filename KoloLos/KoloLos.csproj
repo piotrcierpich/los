@@ -354,6 +354,7 @@
     <Content Include="Views\GalleryManager\Create.cshtml" />
     <Content Include="Views\GalleryManager\Edit.cshtml" />
     <Content Include="Views\GalleryManager\ImageDetails.cshtml" />
+    <Content Include="Views\GalleryManager\AddImage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

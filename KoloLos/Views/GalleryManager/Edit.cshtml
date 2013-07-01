@@ -22,6 +22,11 @@
     </table>
 </div>
 <div>
-    <br/>
-    @Html.ActionLink("Powrót do list galerii", "Index")
+    <br />
+    <div>
+        @Html.ActionLink("Dodaj nowe zdjęcia", "AddImage", new { id = Model.Id })
+    </div>
+    <div>
+        @Html.ActionLink("Powrót do list galerii", "Index")
+    </div>
 </div>

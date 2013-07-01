@@ -1,0 +1,13 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Plik - zdjęcie lub zip:</label>
+    <input id="file" name="file" type="file" accept="BMP|GIF|EXIF|JPG|PNG|TIFF|ZIP">
+    <input type="submit" value="Wyślij"/>
+}

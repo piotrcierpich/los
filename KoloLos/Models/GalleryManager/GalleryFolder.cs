@@ -35,5 +35,10 @@ namespace KoloLos.Models.GalleryManager
         {
             return str.Select(c => char.IsLetterOrDigit(c) ? c : '_').Aggregate(string.Empty, (s, c) => s + c);
         }
+
+        public string GetPathForImageFile(string imageFile)
+        {
+            return Path.Combine(imagesDirectory, imageFile);
+        }
     }
 }
