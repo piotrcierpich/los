@@ -187,6 +187,7 @@
     <Compile Include="Models\GalleryManager\GalleryEdit.cs" />
     <Compile Include="Models\GalleryManager\GalleryFolder.cs" />
     <Compile Include="Models\GalleryManager\GalleryNew.cs" />
+    <Compile Include="Models\Gallery\FolderResolver.cs" />
     <Compile Include="Models\Gallery\Galleries.cs" />
     <Compile Include="Models\Gallery\GalleryImage.cs" />
     <Compile Include="Models\Gallery\GalleryLink.cs" />

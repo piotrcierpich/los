@@ -1,32 +1,25 @@
 ﻿using System.IO;
 using System.Linq;
-using System.Web;
+
+using KoloLos.Models.Gallery;
 
 namespace KoloLos.Models.GalleryManager
 {
     public class GalleryFolder
     {
-        private const string ImagesDirectoryPattern = "/Content/gallery/{0}/";
-        private const string ThumbnailsDirectoryPattern = "/Content/gallery/{0}/thumbnails/";
-
-        private readonly string imagesDirectory;
-        private readonly string thumbnailsDirectory;
+        private readonly FolderResolver folderResolver ;
         private readonly string galleryFolder;
 
         public GalleryFolder(string galleryTitle)
         {
             galleryFolder = ReplaceNonCharactersOrDigitsWithUnderscore(galleryTitle);
-            string imagesUri = string.Format(ImagesDirectoryPattern, galleryFolder);
-            string thumbnailsUri = string.Format(ThumbnailsDirectoryPattern, galleryFolder);
-
-            imagesDirectory = HttpContext.Current.Server.MapPath(imagesUri);
-            thumbnailsDirectory = HttpContext.Current.Server.MapPath(thumbnailsUri);
+            folderResolver = new FolderResolver(galleryFolder);
         }
 
         public string CreateGalleryDirectories()
         {
-            new DirectoryInfo(imagesDirectory).Create();
-            new DirectoryInfo(thumbnailsDirectory).Create();
+            new DirectoryInfo(folderResolver.ImagesDirectory).Create();
+            new DirectoryInfo(folderResolver.ThumbnailsDirectory).Create();
 
             return galleryFolder;
         }
@@ -38,7 +31,7 @@ namespace KoloLos.Models.GalleryManager
 
         public string GetPathForImageFile(string imageFile)
         {
-            return Path.Combine(imagesDirectory, imageFile);
+            return Path.Combine(folderResolver.ImagesDirectory, imageFile);
         }
     }
 }

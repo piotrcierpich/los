@@ -100,8 +100,7 @@ namespace KoloLos.Controllers
         {
             if (file != null && file.ContentLength > 0)
             {
-                // add thumbnail generation - probably a separate class, after
-                // refactoring from galleryfolder/imagesbrowser add new class for creating a file in relevant gallery
+                // TODO add thumbnail generation - probably a separate class, after
                 Gallery gallery = galleriesRepository.Galleries.Find(id);
                 GalleryFolder galleryFolder = new GalleryFolder(gallery.Path);
                 string pathOfImage = galleryFolder.GetPathForImageFile(file.FileName);
