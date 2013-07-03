@@ -31,8 +31,16 @@ namespace KoloLos
                             constraints: new { listName = @"(^News$)|(^Resolutions$)", pageIndex = @"\b\d+\b" });
 
             routes.MapRoute(name: "galleryManager",
-                            url: "manager/gallery/{action}/{id}",
-                            defaults: new { controller = "gallerymanager", action = "Index", id = UrlParameter.Optional });
+                            url: "manager/gallery/",
+                            defaults: new { controller = "gallerymanager", action = "Index" });
+
+            routes.MapRoute(name: "galleryManagerGalleryDetails",
+                            url: "manager/gallery/{id}",
+                            defaults: new { controller = "gallerymanager", action = "Edit" });
+
+            routes.MapRoute(name: "galleryManagerImageAction",
+                            url: "manager/gallery/{id}/{action}",
+                            defaults: new { controller = "gallerymanager" });
 
             routes.MapRoute(name: "manager",
                             url: "manager/{category}/{action}/{id}",
