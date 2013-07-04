@@ -33,5 +33,10 @@ namespace KoloLos.Models.GalleryManager
         {
             return Path.Combine(folderResolver.ImagesDirectory, imageFile);
         }
+
+        public void DeleteGalleryFolders()
+        {
+            new DirectoryInfo(folderResolver.ImagesDirectory).Delete(true);
+        }
     }
 }

@@ -14,12 +14,16 @@
         <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
+        <th></th>
     </tr>
     @foreach (var galleryLink in Model)
     {
         <tr>
             <td>
                 @Html.RouteLink(galleryLink.Title, "galleryManagerGalleryDetails", new { galleryLink.Id })
+            </td>
+            <td>
+                @Html.RouteLink("Skasuj", "galleryManagerImageAction", new { galleryLink.Id, action = "Delete" })
             </td>
         </tr>
     }

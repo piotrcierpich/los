@@ -1,0 +1,20 @@
+﻿@model KoloLos.Models.GalleryManager.GalleryDelete
+
+@{
+    ViewBag.Title = "title";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+<h3>Czy chcesz skasować tą galerię?</h3>
+<fieldset>
+    <legend>@Model.Title</legend>
+    <p>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <input type="submit" value="Skasuj" />
+        }
+        |
+        @Html.ActionLink("Powrót do listy", "Index")
+    </p>
+</fieldset>

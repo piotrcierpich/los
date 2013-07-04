@@ -173,6 +173,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Models\GalleryManager\GalleryDelete.cs" />
     <Compile Include="Models\GalleryManager\ImageRemover.cs" />
     <Compile Include="Models\GalleryManager\GalleryImageDetails.cs" />
     <Compile Include="Controllers\GalleryManagerController.cs" />
@@ -356,6 +357,7 @@
     <Content Include="Views\GalleryManager\Edit.cshtml" />
     <Content Include="Views\GalleryManager\ImageDetails.cshtml" />
     <Content Include="Views\GalleryManager\AddImage.cshtml" />
+    <Content Include="Views\GalleryManager\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

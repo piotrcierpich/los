@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -60,6 +61,40 @@ namespace KoloLos.Controllers
             }
 
             return View(galleryNew);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            Gallery galleryToDelete = galleriesRepository.Galleries.Find(id);
+            GalleryDelete galleryDelete = new GalleryDelete();
+            galleryDelete.InjectFrom(galleryToDelete);
+            return View(galleryDelete);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteGallery(int id)
+        {
+            if (ModelState.IsValid)
+            {
+                Gallery galleryToDelete = galleriesRepository.Galleries.Find(id);
+                galleriesRepository.Galleries.Remove(galleryToDelete);
+                galleriesRepository.SaveChanges();
+
+                try
+                {
+                    GalleryFolder galleryFolder = new GalleryFolder(galleryToDelete.Path);
+                    galleryFolder.DeleteGalleryFolders();
+                }
+                catch
+                {
+                }
+
+                return RedirectToAction("Index");
+            }
+
+            return View("Index");
         }
 
 
