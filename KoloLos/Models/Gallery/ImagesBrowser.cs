@@ -26,7 +26,9 @@ namespace KoloLos.Models.Gallery
 
         public string[] GetImagesFileNames()
         {
-            return new DirectoryInfo(folderResolver.ImagesDirectory).GetFiles().Select(f => f.Name).ToArray();
+            return Directory.Exists(folderResolver.ImagesDirectory)
+                           ? new DirectoryInfo(folderResolver.ImagesDirectory).GetFiles().Select(f => f.Name).ToArray()
+                           : new string[0];
         }
 
         public string GetImagePath(string fileName)

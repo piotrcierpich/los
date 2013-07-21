@@ -138,8 +138,7 @@ namespace KoloLos.Controllers
                 // TODO add thumbnail generation - probably a separate class, after
                 Gallery gallery = galleriesRepository.Galleries.Find(id);
                 GalleryFolder galleryFolder = new GalleryFolder(gallery.Path);
-                string pathOfImage = galleryFolder.GetPathForImageFile(file.FileName);
-                file.SaveAs(pathOfImage);
+                galleryFolder.AddFile(file);
             }
 
             return RedirectToAction("Edit", new { id });
