@@ -8,8 +8,8 @@ namespace KoloLos.Models.GalleryManager
     {
         private readonly string thumbnailDirectory;
 
-        public const int ThumbnailHeight = 100;
-        public const int ThumbnailWidth = 100;
+        public const int ThumbnailHeight = 200;
+        public const int ThumbnailWidth = 200;
 
         public ImageThumbnail(string thumbnailDirectory)
         {

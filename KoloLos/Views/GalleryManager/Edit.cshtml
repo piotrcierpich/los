@@ -10,13 +10,11 @@
     <table>
         <tr>
             <th>@Html.DisplayNameFor(g => g.FileNames)</th>
-            <th></th>
         </tr>
         @foreach (string fileName in Model.FileNames)
         {
             <tr>
                 <td>@Html.ActionLink(fileName, "ImageDetails", new { Model.Id, fileName })</td>
-                <td>@Html.ActionLink("Skasuj", "DeleteImage", new { Model.Id, fileName })</td>
             </tr>
         }
     </table>
