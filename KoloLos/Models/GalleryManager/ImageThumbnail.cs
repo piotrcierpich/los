@@ -1,6 +1,6 @@
-﻿using System.IO;
+﻿using System.Drawing;
+using System.IO;
 using System.Web;
-using System.Web.Helpers;
 
 namespace KoloLos.Models.GalleryManager
 {
@@ -18,17 +18,9 @@ namespace KoloLos.Models.GalleryManager
 
         public void CreateThumbnail(string path)
         {
-            if (string.IsNullOrEmpty(path))
-                return;
-
-            if (!File.Exists(path))
-                return;
-
-            WebImage webImage = new WebImage(path);
-            webImage.Resize(ThumbnailWidth, ThumbnailHeight);
-
+            ImageResizer imageResizer = new ImageResizer(path);
             var thumbnailPath = GetThumbnailPath(path);
-            webImage.Save(thumbnailPath);
+            imageResizer.ResizeAndSave(new Size(ThumbnailWidth, ThumbnailHeight), thumbnailPath);
         }
 
         private string GetThumbnailPath(string path)

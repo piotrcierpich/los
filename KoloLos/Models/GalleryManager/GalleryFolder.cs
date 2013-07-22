@@ -36,8 +36,8 @@ namespace KoloLos.Models.GalleryManager
             string pathOfImage = GetPathForImageFile(file.FileName);
             file.SaveAs(pathOfImage);
 
-            ImageThumbnail imageThumbnail = new ImageThumbnail(folderResolver.ThumbnailsDirectory);
-            imageThumbnail.CreateThumbnail(pathOfImage);
+            CreateThubnail(pathOfImage);
+            NormalizeImageSize(pathOfImage);
         }
 
         private void CreateGalleryFoldersIfExist()
@@ -51,6 +51,18 @@ namespace KoloLos.Models.GalleryManager
             {
                 Directory.CreateDirectory(folderResolver.ThumbnailsDirectory);
             }
+        }
+
+        private void CreateThubnail(string pathToImage)
+        {
+            ImageThumbnail imageThumbnail = new ImageThumbnail(folderResolver.ThumbnailsDirectory);
+            imageThumbnail.CreateThumbnail(pathToImage);
+        }
+
+        private static void NormalizeImageSize(string pathOfImage)
+        {
+            ImageNormalizer imageNormalizer = new ImageNormalizer(pathOfImage);
+            imageNormalizer.NormalizeImage();
         }
 
         private string GetPathForImageFile(string imageFile)
