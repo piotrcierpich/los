@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -36,8 +37,20 @@ namespace KoloLos.Models.GalleryManager
             string pathOfImage = GetPathForImageFile(file.FileName);
             file.SaveAs(pathOfImage);
 
-            CreateThubnail(pathOfImage);
-            NormalizeImageSize(pathOfImage);
+            IEnumerable<string> files = GetNewFilesNames(pathOfImage);
+
+            foreach (string imageFile in files)
+            {
+                CreateThubnail(imageFile);
+                NormalizeImageSize(imageFile);
+            }
+        }
+
+        private IEnumerable<string> GetNewFilesNames(string pathOfNewFile)
+        {
+            GalleryFilesResolver filesResolver = new GalleryFilesResolver(pathOfNewFile);
+            filesResolver.UnpackIfArchive();
+            return filesResolver.GetFileNames();
         }
 
         private void CreateGalleryFoldersIfExist()

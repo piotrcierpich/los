@@ -79,6 +79,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,6 +175,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Models\GalleryManager\GalleryFilesResolver.cs" />
     <Compile Include="Models\GalleryManager\GalleryDelete.cs" />
     <Compile Include="Models\GalleryManager\ImageNormalizer.cs" />
     <Compile Include="Models\GalleryManager\ImageRemover.cs" />
