@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KoloLos.Images.Gallery.Display;
 using KoloLos.Models;
 using KoloLos.Models.Gallery;
 
@@ -57,7 +58,7 @@ namespace KoloLos.Controllers
         {
             Gallery gallery = galleries.Find(id);
             ImagesBrowser imagesLocation = new ImagesBrowser(gallery.Path);
-            Images images = new Images { Title = gallery.Title, GalleryImages = imagesLocation.GetImages() };
+            Models.Gallery.Images images = new Models.Gallery.Images { Title = gallery.Title, GalleryImages = imagesLocation.GetImages() };
             return View(images);
         }
     }

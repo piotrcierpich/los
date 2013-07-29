@@ -3,9 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-using KoloLos.Models.Gallery;
-
-namespace KoloLos.Models.GalleryManager
+namespace KoloLos.Images.Gallery.Manage
 {
     public class GalleryFolder
     {

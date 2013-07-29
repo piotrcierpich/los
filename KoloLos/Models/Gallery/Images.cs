@@ -1,4 +1,6 @@
-﻿namespace KoloLos.Models.Gallery
+﻿using KoloLos.Images.Gallery.Display;
+
+namespace KoloLos.Models.Gallery
 {
     public class Images
     {

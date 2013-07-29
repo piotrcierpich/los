@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+using KoloLos.Images.Gallery.Display;
+using KoloLos.Images.Gallery.Manage;
 using KoloLos.Models.Gallery;
 using KoloLos.Models.GalleryManager;
 

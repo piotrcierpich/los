@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLos", "KoloLos\KoloLos.csproj", "{3C1D4E08-70FD-4E50-B7ED-B3C6ADBBC44A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLos.Tests", "KoloLos.Tests\KoloLos.Tests.csproj", "{C0597C2F-7AA6-427C-8AD6-0155E2D79150}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLosDataLayer", "KoloLosDataLayer\KoloLosDataLayer.csproj", "{020CC762-7661-4128-87F7-9FFE3749A497}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{4ACDED61-A0ED-4468-86B1-E432DD8AFD3E}"
@@ -18,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLosCommon", "KoloLosCom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLosUtils", "KoloLosUtils\KoloLosUtils.csproj", "{E33852D0-C68B-4904-BCE5-447ED64F7DA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KoloLos.Images", "KoloLos.Images\KoloLos.Images.csproj", "{5D496BE1-1488-4440-A66F-391C50ABB363}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +28,6 @@ Global
 		{3C1D4E08-70FD-4E50-B7ED-B3C6ADBBC44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C1D4E08-70FD-4E50-B7ED-B3C6ADBBC44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C1D4E08-70FD-4E50-B7ED-B3C6ADBBC44A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0597C2F-7AA6-427C-8AD6-0155E2D79150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0597C2F-7AA6-427C-8AD6-0155E2D79150}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0597C2F-7AA6-427C-8AD6-0155E2D79150}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0597C2F-7AA6-427C-8AD6-0155E2D79150}.Release|Any CPU.Build.0 = Release|Any CPU
 		{020CC762-7661-4128-87F7-9FFE3749A497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{020CC762-7661-4128-87F7-9FFE3749A497}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020CC762-7661-4128-87F7-9FFE3749A497}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,6 +40,10 @@ Global
 		{E33852D0-C68B-4904-BCE5-447ED64F7DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E33852D0-C68B-4904-BCE5-447ED64F7DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E33852D0-C68B-4904-BCE5-447ED64F7DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D496BE1-1488-4440-A66F-391C50ABB363}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D496BE1-1488-4440-A66F-391C50ABB363}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D496BE1-1488-4440-A66F-391C50ABB363}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D496BE1-1488-4440-A66F-391C50ABB363}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

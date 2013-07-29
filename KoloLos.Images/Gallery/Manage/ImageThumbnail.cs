@@ -1,15 +1,12 @@
 ﻿using System.Drawing;
 using System.IO;
-using System.Web;
 
-namespace KoloLos.Models.GalleryManager
+namespace KoloLos.Images.Gallery.Manage
 {
     public class ImageThumbnail
     {
+        private static readonly Size ThumbnailSize = new Size(200, 200);
         private readonly string thumbnailDirectory;
-
-        public const int ThumbnailHeight = 200;
-        public const int ThumbnailWidth = 200;
 
         public ImageThumbnail(string thumbnailDirectory)
         {
@@ -20,7 +17,7 @@ namespace KoloLos.Models.GalleryManager
         {
             ImageResizer imageResizer = new ImageResizer(path);
             var thumbnailPath = GetThumbnailPath(path);
-            imageResizer.ResizeAndSave(new Size(ThumbnailWidth, ThumbnailHeight), thumbnailPath);
+            imageResizer.ResizeAndSave(ThumbnailSize, thumbnailPath);
         }
 
         private string GetThumbnailPath(string path)

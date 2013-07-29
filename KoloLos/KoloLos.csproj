@@ -177,10 +177,7 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\SlideShowManagerController.cs" />
     <Compile Include="Models\GalleryForSlideshow.cs" />
-    <Compile Include="Models\GalleryManager\GalleryFilesResolver.cs" />
     <Compile Include="Models\GalleryManager\GalleryDelete.cs" />
-    <Compile Include="Models\GalleryManager\ImageNormalizer.cs" />
-    <Compile Include="Models\GalleryManager\ImageRemover.cs" />
     <Compile Include="Models\GalleryManager\GalleryImageDetails.cs" />
     <Compile Include="Controllers\GalleryManagerController.cs" />
     <Compile Include="Controllers\ListOfArticlesController.cs" />
@@ -192,16 +189,10 @@
     </Compile>
     <Compile Include="Models\ArticleAbstract.cs" />
     <Compile Include="Models\GalleryManager\GalleryEdit.cs" />
-    <Compile Include="Models\GalleryManager\GalleryFolder.cs" />
     <Compile Include="Models\GalleryManager\GalleryNew.cs" />
-    <Compile Include="Models\GalleryManager\ImageResizer.cs" />
-    <Compile Include="Models\GalleryManager\ImageThumbnail.cs" />
-    <Compile Include="Models\Gallery\FolderResolver.cs" />
     <Compile Include="Models\Gallery\Galleries.cs" />
-    <Compile Include="Models\Gallery\GalleryImage.cs" />
     <Compile Include="Models\Gallery\GalleryLink.cs" />
     <Compile Include="Models\Gallery\Images.cs" />
-    <Compile Include="Models\Gallery\ImagesBrowser.cs" />
     <Compile Include="Models\ListableModel.cs" />
     <Compile Include="Models\MainPageModel.cs" />
     <Compile Include="Models\ArticleDetail.cs" />
@@ -380,6 +371,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KoloLos.Images\KoloLos.Images.csproj">
+      <Project>{5D496BE1-1488-4440-A66F-391C50ABB363}</Project>
+      <Name>KoloLos.Images</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KoloLosCommon\KoloLosCommon.csproj">
       <Project>{33995842-E41A-4182-9807-726F367844D9}</Project>
       <Name>KoloLosCommon</Name>

@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace KoloLos.Models.GalleryManager
+namespace KoloLos.Images.Gallery.Manage
 {
     public class ImageNormalizer
     {

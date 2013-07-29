@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace KoloLos.Models.Gallery
+namespace KoloLos.Images.Gallery
 {
     public class FolderResolver
     {

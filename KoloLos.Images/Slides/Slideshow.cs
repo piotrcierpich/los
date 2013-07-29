@@ -3,10 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 
-using KoloLos.Images;
-using KoloLos.Models.GalleryManager;
-
-namespace KoloLos.Models
+namespace KoloLos.Images.Slides
 {
     public class Slideshow
     {

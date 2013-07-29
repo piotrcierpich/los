@@ -2,7 +2,7 @@
 using System.IO;
 using System.Web.Helpers;
 
-namespace KoloLos.Models.GalleryManager
+namespace KoloLos.Images
 {
     public class ImageResizer
     {

@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 
-namespace KoloLos.Models.Gallery
+namespace KoloLos.Images.Gallery.Display
 {
     public class ImagesBrowser
     {

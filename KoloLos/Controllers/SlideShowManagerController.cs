@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 
+using KoloLos.Images.Gallery;
 using KoloLos.Models;
-using KoloLos.Models.Gallery;
 
 using KoloLosCommon;
 
