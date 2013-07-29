@@ -1,0 +1,9 @@
+﻿@model string[]
+
+<link href="~/Content/slideshow.css" rel="stylesheet" />
+<div>
+    @foreach (string imageAddress in Model)
+    {
+        <img src="@imageAddress" width="250" height="188" alt="Slide 1" class="slide" id="firstSlide">            
+    }
+</div>

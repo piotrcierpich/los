@@ -5,5 +5,6 @@
         public ArticleAbstract[] Abstracts { get; set; }
         public string DescriptionTitle { get; set; }
         public string Description { get; set; }
+        public string[] SlideShowImages { get; set; }
     }
 }

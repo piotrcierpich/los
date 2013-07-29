@@ -175,6 +175,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
+    <Compile Include="Controllers\SlideShowManagerController.cs" />
+    <Compile Include="Models\GalleryForSlideshow.cs" />
     <Compile Include="Models\GalleryManager\GalleryFilesResolver.cs" />
     <Compile Include="Models\GalleryManager\GalleryDelete.cs" />
     <Compile Include="Models\GalleryManager\ImageNormalizer.cs" />
@@ -210,9 +212,11 @@
     <Compile Include="Models\Manager\ArticleTitle.cs" />
     <Compile Include="Models\Manager\CategoryConstraint.cs" />
     <Compile Include="Models\NextPreviousOptions.cs" />
+    <Compile Include="Models\Slideshow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\slideshow.css" />
     <Content Include="Content\gallery\Sample1\image-1.jpg" />
     <Content Include="Content\gallery\Sample1\image-2.jpg" />
     <Content Include="Content\gallery\Sample1\image-3.jpg" />
@@ -316,6 +320,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\lightbox.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\slideshow.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -364,6 +369,8 @@
     <Content Include="Views\GalleryManager\ImageDetails.cshtml" />
     <Content Include="Views\GalleryManager\AddImage.cshtml" />
     <Content Include="Views\GalleryManager\Delete.cshtml" />
+    <Content Include="Views\Main\SlideShow.cshtml" />
+    <Content Include="Views\SlideShowManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

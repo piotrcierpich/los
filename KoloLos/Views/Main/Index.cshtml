@@ -47,7 +47,7 @@
                 </div>
             </div>
             <aside id="aside-second"
-                class="aside-second shadow-box">
+                   class="aside-second shadow-box">
                 <div class="zone zone-aside-second">
                     <article class="widget">
 
@@ -108,8 +108,7 @@
                             <h1>Ostatnia galeria</h1>
                         </header>
                         <div id="slideshow">
-                            <img height="188" src="/Content/pics/IMG_5036.JPG"
-                                width="250" />
+                            @Html.Partial("SlideShow", Model.SlideShowImages)
                         </div>
                     </article>
                 </div>
@@ -117,3 +116,7 @@
         </div>
     </div>
 </div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/slideshow")
+}

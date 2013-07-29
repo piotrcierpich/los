@@ -42,6 +42,10 @@ namespace KoloLos
                             url: "manager/gallery/{id}/{action}",
                             defaults: new { controller = "gallerymanager" });
 
+            routes.MapRoute(name: "slideshowManager",
+                            url: "manager/slideshow",
+                            defaults: new { controller = "SlideShowManagerController" });
+
             routes.MapRoute(name: "manager",
                             url: "manager/{category}/{action}/{id}",
                             defaults: new { controller = "manager", category = UrlParameter.Optional, action = "Index", id = UrlParameter.Optional },

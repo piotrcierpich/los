@@ -1,0 +1,18 @@
+﻿@using KoloLos.Models
+@model GalleryForSlideshow
+
+@{
+    ViewBag.Title = "Pokaz slajdów";
+    Layout = "../Shared/ManagerLayout.cshtml";
+}
+
+<h2>Wybierz galerię do pokazu slajdów</h2>
+@using (Html.BeginForm())
+{
+    foreach (AvailableGallery availableGallery in Model.AvailableGalleries)
+    {
+        @Html.RadioButtonFor(m => m.SelectedId, availableGallery.Id, new{id = availableGallery.Id.ToString()})
+        @Html.Label(availableGallery.Id.ToString(), availableGallery.Title)
+    }
+    <button type="submit">Zapisz</button>
+}

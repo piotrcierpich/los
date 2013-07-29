@@ -30,9 +30,16 @@ namespace KoloLos.Controllers
             {
                 DescriptionTitle = mainPageArticle.Title,
                 Description = mainPageArticle.Content,
-                Abstracts = GetLatestAbstracts()
+                Abstracts = GetLatestAbstracts(),
+                SlideShowImages = GetSlides()
             };
             return View(mainPageModel);
+        }
+
+        private string[] GetSlides()
+        {
+            Slideshow slideshow = new Slideshow();
+            return slideshow.GetSlidesUris();
         }
 
         private Article GetMainPageArticle()
