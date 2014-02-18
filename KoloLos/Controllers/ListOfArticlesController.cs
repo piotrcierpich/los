@@ -20,7 +20,7 @@ namespace KoloLos.Controllers
             this.articles = articles;
         }
 
-        public ActionResult Index(Category listName, int pageIndex)
+        public ActionResult Index(Category listName, int pageIndex = 0)
         {
             ArticleAbstractsList articleAbstracts = new ArticleAbstractsList
             {
