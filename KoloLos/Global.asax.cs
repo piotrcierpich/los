@@ -10,6 +10,7 @@ using Autofac.Integration.Mvc;
 using KoloLosCommon;
 
 using KoloLosDataLayer;
+using WebMatrix.WebData;
 
 namespace KoloLos
 {

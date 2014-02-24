@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -11,6 +12,7 @@ using Omu.ValueInjecter;
 
 namespace KoloLos.Controllers
 {
+    [Authorize]
     public class ManagerController : Controller
     {
         private readonly IArticlesRepository articlesRepository;

@@ -1,0 +1,37 @@
+﻿@model KoloLos.Models.Accounts.LogIn
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/SingleColumnLayout.cshtml";
+}
+
+@section articleTitle
+{
+    Zaloguj
+}
+
+@using(@Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+@Html.AntiForgeryToken()
+@Html.ValidationSummary(true)
+<fieldset>
+    <legend></legend>
+    <ol>
+        <li>
+            @Html.LabelFor(m => m.Login)
+            @Html.TextBoxFor(m => m.Login)
+            @Html.ValidationMessageFor(m => m.Login)
+        </li>
+        <li>
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </li>
+        <li>
+            @Html.CheckBoxFor(m => m.RememberMe)
+            @Html.LabelFor(m => m.RememberMe)
+        </li>
+    </ol>
+    <input type="submit" value="Zaloguj" />
+</fieldset>
+}
