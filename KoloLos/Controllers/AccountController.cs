@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using KoloLos.Filters;
 using KoloLos.Models.Accounts;
 using WebMatrix.WebData;
@@ -42,6 +39,14 @@ namespace KoloLos.Controllers
             return Redirect(returnUrl);
           
           return RedirectToAction("Index", "Main");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logout()
+        {
+            WebSecurity.Logout();
+            return RedirectToAction("Index", "Main");
         }
     }
 }

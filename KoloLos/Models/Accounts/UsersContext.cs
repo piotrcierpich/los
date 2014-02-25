@@ -7,7 +7,7 @@ namespace KoloLos.Models.Accounts
   public class UsersContext : DbContext
   {
     public UsersContext()
-      : base("DefaultConnection")
+      : base("KoloLos")
     {
     }
 
