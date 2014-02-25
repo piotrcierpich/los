@@ -95,7 +95,7 @@
                                         </header>
                                         <p>
                                             @Html.RemoveMarkup(articleAbstract.Abstract)
-                                            @Html.RouteLink("więcej", "articleById", new { id = articleAbstract.Id })
+                                            @Html.RouteLink("więcej", "articleById", new { Category = Category.News, id = articleAbstract.Id })
                                         </p>
                                     </article>
                                 </li>
